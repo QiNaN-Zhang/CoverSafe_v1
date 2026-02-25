@@ -1,0 +1,216 @@
+{
+  "device": "capacitor",
+  "type": "capacitor",
+  "standoff_m": 3.8,
+  "voxel_size_m": 0.2,
+  "device_shape": [
+    73,
+    135,
+    26
+  ],
+  "preprocess": {
+    "ground_removed_layers": 0,
+    "ground_removed_voxels": 0
+  },
+  "raw_viewpoints": 25,
+  "ordered_viewpoints": 25,
+  "timing": {
+    "viewpoint_generation_time_s": 0.047555700002703816,
+    "avg_generation_time_per_viewpoint_ms": 1.9022280001081526,
+    "viewpoint_reorder_time_s": 0.001340699993306771,
+    "coverage_eval_time_s": 1.0760917000006884,
+    "path_planning_time_s": 0.08358380000572652,
+    "avg_path_planning_time_per_viewpoint_pair_ms": 3.4826583335719383,
+    "device_total_runtime_s": 48.744624399987515
+  },
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 795,
+    "coverage_ratio": 0.2839285714285714
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 1.0,
+    "total_length_m": 95.13084087981917,
+    "avg_segment_length_m": 3.948176933702762,
+    "min_segment_length_m": 0.3021139324549951,
+    "max_segment_length_m": 16.96033214074326,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 9,
+        "length_m": 2.6485281374238694
+      },
+      {
+        "i": 1,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 7,
+        "length_m": 2.0196152422706666
+      },
+      {
+        "i": 2,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 18,
+        "length_m": 6.218376618407346
+      },
+      {
+        "i": 3,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 49,
+        "length_m": 16.96033214074326
+      },
+      {
+        "i": 4,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.5021514627454472
+      },
+      {
+        "i": 5,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 3.2485281374238513
+      },
+      {
+        "i": 6,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 8,
+        "length_m": 2.2242640687119173
+      },
+      {
+        "i": 7,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 8,
+        "length_m": 2.2242640687119266
+      },
+      {
+        "i": 8,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 5,
+        "length_m": 1.3242640687119303
+      },
+      {
+        "i": 9,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.9752946405729446
+      },
+      {
+        "i": 10,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.3021139324549951
+      },
+      {
+        "i": 11,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 1.024192535695709
+      },
+      {
+        "i": 12,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 9,
+        "length_m": 2.524264068711919
+      },
+      {
+        "i": 13,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 39,
+        "length_m": 12.89116882454315
+      },
+      {
+        "i": 14,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 31,
+        "length_m": 9.621320343559649
+      },
+      {
+        "i": 15,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 28,
+        "length_m": 8.816671517118376
+      },
+      {
+        "i": 16,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 1.3479655487611257
+      },
+      {
+        "i": 17,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 3.621320343559647
+      },
+      {
+        "i": 18,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.3189104129208441
+      },
+      {
+        "i": 19,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 10,
+        "length_m": 2.8242640687119183
+      },
+      {
+        "i": 20,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 1.612451549659717
+      },
+      {
+        "i": 21,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.611872127750657
+      },
+      {
+        "i": 22,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 9,
+        "length_m": 2.8970562748477042
+      },
+      {
+        "i": 23,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 26,
+        "length_m": 7.997056274847717
+      }
+    ]
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\path_waypoints.csv",
+    "path_display_csv": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\path_waypoints_display.csv",
+    "plot_png": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\device_plan.png",
+    "plot_gif": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\device_plan_rotate.gif",
+    "generation_diagnostics_png": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\generation_diagnostics.png",
+    "coverage_map_png": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\coverage_map.png",
+    "coverage_map_gif": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\coverage_map_rotate.gif",
+    "reorder_baseline_compare_json": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\reorder_baseline_compare.json",
+    "reorder_baseline_compare_png": "F:\\FINAL\\outputs\\phase2_single_device\\capacitor\\reorder_baseline_compare.png"
+  }
+}

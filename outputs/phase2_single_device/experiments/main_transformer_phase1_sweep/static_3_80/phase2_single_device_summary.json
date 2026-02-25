@@ -1,0 +1,12 @@
+{
+  "phase": "phase2_single_device",
+  "device_count": 1,
+  "global_coverage_ratio_weighted": 0.435,
+  "sampled_surface_points_total": 2800,
+  "covered_surface_points_total": 1218,
+  "viewpoint_generation_time_total_s": 0.15520700000342913,
+  "viewpoint_generation_time_avg_per_viewpoint_ms": 1.5520700000342913,
+  "path_planning_time_total_s": 11.46695550000004,
+  "path_planning_time_avg_per_pair_ms": 115.82783333333374,
+  "summary_csv": "F:\\FINAL\\outputs\\phase2_single_device\\experiments\\main_transformer_phase1_sweep\\static_3_80\\phase2_single_device_summary.csv"
+}

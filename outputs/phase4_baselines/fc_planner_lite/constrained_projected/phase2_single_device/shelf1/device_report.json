@@ -1,0 +1,238 @@
+{
+  "phase": "phase4_baselines",
+  "baseline_method": "fc_planner_lite",
+  "scenario": "constrained_projected",
+  "device": "shelf1",
+  "type": "shelf",
+  "standoff_m": 3.9999999999999996,
+  "raw_viewpoints": 29,
+  "ordered_viewpoints": 29,
+  "timing": {
+    "viewpoint_generation_time_s": 0.022083799995016307,
+    "viewpoint_reorder_time_s": 0.005516699980944395,
+    "coverage_eval_time_s": 2.7699936000281014,
+    "path_planning_time_s": 23.056899399962276,
+    "avg_path_planning_time_per_viewpoint_pair_ms": 823.4606928557956,
+    "device_total_runtime_s": 31.882841999991797
+  },
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 1633,
+    "coverage_ratio": 0.5832142857142857
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 0.8214285714285714,
+    "total_length_m": 326.701126787454,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 25,
+        "length_m": 8.824045381354205
+      },
+      {
+        "i": 1,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 18,
+        "length_m": 6.819396554912959
+      },
+      {
+        "i": 2,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 30,
+        "length_m": 10.448309450066159
+      },
+      {
+        "i": 3,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.0
+      },
+      {
+        "i": 4,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 11.638298844762492
+      },
+      {
+        "i": 5,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 13,
+        "length_m": 4.975517243930365
+      },
+      {
+        "i": 6,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 24,
+        "length_m": 9.220416491418563
+      },
+      {
+        "i": 7,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 19,
+        "length_m": 6.61372779196607
+      },
+      {
+        "i": 8,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 28,
+        "length_m": 9.68651999810188
+      },
+      {
+        "i": 9,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 15.226293048539427
+      },
+      {
+        "i": 10,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.0
+      },
+      {
+        "i": 11,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 11.776671855834323
+      },
+      {
+        "i": 12,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 4.309078965524823
+      },
+      {
+        "i": 13,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 35,
+        "length_m": 13.994360339763393
+      },
+      {
+        "i": 14,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 22.067849917923574
+      },
+      {
+        "i": 15,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.256996084384251
+      },
+      {
+        "i": 16,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 16,
+        "length_m": 5.216671517118384
+      },
+      {
+        "i": 17,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 7.553806987208503
+      },
+      {
+        "i": 18,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 6.014981296729027
+      },
+      {
+        "i": 19,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 20,
+        "length_m": 6.263494553253246
+      },
+      {
+        "i": 20,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 38,
+        "length_m": 13.784596209455199
+      },
+      {
+        "i": 21,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 176,
+        "length_m": 57.20173420399924
+      },
+      {
+        "i": 22,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 178,
+        "length_m": 55.57359345528368
+      },
+      {
+        "i": 23,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 20,
+        "length_m": 5.919615242270674
+      },
+      {
+        "i": 24,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 23,
+        "length_m": 6.943879310982595
+      },
+      {
+        "i": 25,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 6.8609917208900715
+      },
+      {
+        "i": 26,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 20,
+        "length_m": 7.361570764606552
+      },
+      {
+        "i": 27,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 17,
+        "length_m": 6.051253175218441
+      }
+    ]
+  },
+  "feasibility": {
+    "raw_total_count": 29,
+    "raw_infeasible_count": 26,
+    "raw_infeasible_ratio": 0.896551724137931,
+    "projected_count": 26,
+    "dropped_count": 0,
+    "avg_projection_distance_m": 3.261380607857244,
+    "max_projection_distance_m": 11.271893007285106,
+    "apply_phase1_constraints": true,
+    "constraint_handling": "project",
+    "path_violation_length_ratio": 0.20018725347803853,
+    "path_violation_length_m": 65.40140127976166,
+    "segment_fallback_ratio": 0.17857142857142858
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\shelf1\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\shelf1\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\shelf1\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\shelf1\\path_waypoints.csv",
+    "path_display_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\shelf1\\path_waypoints_display.csv"
+  }
+}

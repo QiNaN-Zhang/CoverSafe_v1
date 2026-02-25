@@ -1,0 +1,204 @@
+{
+  "strict_target": [
+    "shelf3",
+    "tube2",
+    "shelf2",
+    "capacitor",
+    "main_transformer",
+    "shelf4",
+    "tube1",
+    "shelf1"
+  ],
+  "total_cases": 180,
+  "strict_match_cases": 20,
+  "strict_match_ratio": 0.1111111111111111,
+  "match_ratio_by_violation_weight": {
+    "0": {
+      "matches": 0,
+      "total": 20,
+      "ratio": 0.0
+    },
+    "0.5": {
+      "matches": 0,
+      "total": 20,
+      "ratio": 0.0
+    },
+    "1": {
+      "matches": 0,
+      "total": 20,
+      "ratio": 0.0
+    },
+    "2": {
+      "matches": 0,
+      "total": 20,
+      "ratio": 0.0
+    },
+    "4": {
+      "matches": 0,
+      "total": 20,
+      "ratio": 0.0
+    },
+    "8": {
+      "matches": 0,
+      "total": 20,
+      "ratio": 0.0
+    },
+    "16": {
+      "matches": 0,
+      "total": 20,
+      "ratio": 0.0
+    },
+    "32": {
+      "matches": 0,
+      "total": 20,
+      "ratio": 0.0
+    },
+    "64": {
+      "matches": 20,
+      "total": 20,
+      "ratio": 1.0
+    }
+  },
+  "top_strict_match_cases": [
+    {
+      "distance_weight": 1.0,
+      "rank_weight": 0.0,
+      "violation_weight": 64.0,
+      "region_switch_penalty_m": 0.0,
+      "strict_match": true,
+      "order": [
+        "shelf3",
+        "tube2",
+        "shelf2",
+        "capacitor",
+        "main_transformer",
+        "shelf4",
+        "tube1",
+        "shelf1"
+      ],
+      "reverse_flags": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "estimated_proxy_cost_m": 294.23562321323993
+    },
+    {
+      "distance_weight": 1.0,
+      "rank_weight": 0.0,
+      "violation_weight": 64.0,
+      "region_switch_penalty_m": 2.0,
+      "strict_match": true,
+      "order": [
+        "shelf3",
+        "tube2",
+        "shelf2",
+        "capacitor",
+        "main_transformer",
+        "shelf4",
+        "tube1",
+        "shelf1"
+      ],
+      "reverse_flags": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "estimated_proxy_cost_m": 294.23562321323993
+    },
+    {
+      "distance_weight": 1.0,
+      "rank_weight": 0.0,
+      "violation_weight": 64.0,
+      "region_switch_penalty_m": 4.0,
+      "strict_match": true,
+      "order": [
+        "shelf3",
+        "tube2",
+        "shelf2",
+        "capacitor",
+        "main_transformer",
+        "shelf4",
+        "tube1",
+        "shelf1"
+      ],
+      "reverse_flags": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "estimated_proxy_cost_m": 294.23562321323993
+    },
+    {
+      "distance_weight": 1.0,
+      "rank_weight": 0.0,
+      "violation_weight": 64.0,
+      "region_switch_penalty_m": 8.0,
+      "strict_match": true,
+      "order": [
+        "shelf3",
+        "tube2",
+        "shelf2",
+        "capacitor",
+        "main_transformer",
+        "shelf4",
+        "tube1",
+        "shelf1"
+      ],
+      "reverse_flags": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "estimated_proxy_cost_m": 294.23562321323993
+    },
+    {
+      "distance_weight": 1.0,
+      "rank_weight": 2.0,
+      "violation_weight": 64.0,
+      "region_switch_penalty_m": 0.0,
+      "strict_match": true,
+      "order": [
+        "shelf3",
+        "tube2",
+        "shelf2",
+        "capacitor",
+        "main_transformer",
+        "shelf4",
+        "tube1",
+        "shelf1"
+      ],
+      "reverse_flags": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "estimated_proxy_cost_m": 294.23562321323993
+    }
+  ]
+}

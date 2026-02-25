@@ -1,0 +1,14 @@
+{
+  "phase": "phase4_baselines",
+  "baseline_method": "predrecon_lite",
+  "scenario": "unconstrained_native",
+  "device_count": 8,
+  "global_coverage_ratio_weighted": 0.06977678571428571,
+  "sampled_surface_points_total": 22400,
+  "covered_surface_points_total": 1563,
+  "viewpoint_generation_time_total_s": 0.08107610000297427,
+  "viewpoint_generation_time_avg_per_viewpoint_ms": 2.4568515152416444,
+  "path_planning_time_total_s": 0.000817099935375154,
+  "path_planning_time_avg_per_pair_ms": 0.03268399741500616,
+  "summary_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\unconstrained_native\\phase2_single_device\\phase2_single_device_summary.csv"
+}

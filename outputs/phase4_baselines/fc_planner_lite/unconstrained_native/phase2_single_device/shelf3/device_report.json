@@ -1,0 +1,172 @@
+{
+  "phase": "phase4_baselines",
+  "baseline_method": "fc_planner_lite",
+  "scenario": "unconstrained_native",
+  "device": "shelf3",
+  "type": "shelf",
+  "standoff_m": 3.9999999999999996,
+  "raw_viewpoints": 21,
+  "ordered_viewpoints": 21,
+  "timing": {
+    "viewpoint_generation_time_s": 0.002654300013091415,
+    "viewpoint_reorder_time_s": 0.0009175000013783574,
+    "coverage_eval_time_s": 0.9798795999959111,
+    "path_planning_time_s": 0.0004507999983616173,
+    "avg_path_planning_time_per_viewpoint_pair_ms": 0.022539999918080866,
+    "device_total_runtime_s": 2.2649046999868006
+  },
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 1808,
+    "coverage_ratio": 0.6457142857142857
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 0.0,
+    "total_length_m": 146.63749914446373,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 10.947190205009749
+      },
+      {
+        "i": 1,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.1630011700124605
+      },
+      {
+        "i": 2,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.359154079381968
+      },
+      {
+        "i": 3,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.3095668395791416
+      },
+      {
+        "i": 4,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 3.54292141995966
+      },
+      {
+        "i": 5,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 10.204188744942488
+      },
+      {
+        "i": 6,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 4.382152108056091
+      },
+      {
+        "i": 7,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.71773731067554
+      },
+      {
+        "i": 8,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 14.447477292310523
+      },
+      {
+        "i": 9,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.4547007968033485
+      },
+      {
+        "i": 10,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 5.2038193425163355
+      },
+      {
+        "i": 11,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.474670302056878
+      },
+      {
+        "i": 12,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 8.007858132150012
+      },
+      {
+        "i": 13,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 8.58847247588726
+      },
+      {
+        "i": 14,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.17273947415872
+      },
+      {
+        "i": 15,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 7.277186612106698
+      },
+      {
+        "i": 16,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 5.606410934270767
+      },
+      {
+        "i": 17,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 4.998495655721182
+      },
+      {
+        "i": 18,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 17.24401236622342
+      },
+      {
+        "i": 19,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 5.535743882641455
+      }
+    ]
+  },
+  "feasibility": {
+    "raw_total_count": 21,
+    "raw_infeasible_count": 19,
+    "raw_infeasible_ratio": 0.9047619047619048,
+    "projected_count": 0,
+    "dropped_count": 0,
+    "avg_projection_distance_m": 0.0,
+    "max_projection_distance_m": 0.0,
+    "apply_phase1_constraints": false,
+    "constraint_handling": "none",
+    "path_violation_length_ratio": 0.9426536048993689,
+    "path_violation_length_m": 138.22836718195686,
+    "segment_fallback_ratio": 1.0
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\unconstrained_native\\phase2_single_device\\shelf3\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\unconstrained_native\\phase2_single_device\\shelf3\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\unconstrained_native\\phase2_single_device\\shelf3\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\unconstrained_native\\phase2_single_device\\shelf3\\path_waypoints.csv",
+    "path_display_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\unconstrained_native\\phase2_single_device\\shelf3\\path_waypoints_display.csv"
+  }
+}

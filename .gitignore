@@ -1,0 +1,4 @@
+﻿.venv/
+__pycache__/
+pointclouds/substation_baseline.las
+pointclouds/substation_origin.las

@@ -1,0 +1,5 @@
+﻿viewpoint_id,device,device_type,role,x,y,z,yaw_deg,pitch_deg,roll_deg,target_x,target_y,target_z,layer_k,component_id
+0,tube1,tube,inspect_capture,17.8974,-74.8069,81.2663,59.17,0.00,0.00,21.9000,-68.1000,75.3000,0,72
+1,tube1,tube,inspect_capture,32.8974,-55.6069,76.7663,-121.95,0.00,0.00,28.1000,-63.3000,74.9000,1,130
+2,tube1,tube,inspect_capture,-27.4026,-57.7069,76.7663,-11.45,0.00,0.00,-22.5000,-58.7000,75.5000,2,112
+3,tube1,tube,inspect_capture,69.7974,-71.5069,82.1663,145.75,0.00,0.00,64.5000,-67.9000,78.7000,3,77

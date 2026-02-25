@@ -1,0 +1,173 @@
+﻿{
+    "random_seed":  42,
+    "paths":  {
+                  "project_root":  ".",
+                  "pointcloud_dir":  "pointclouds",
+                  "baseline_name":  "substation_baseline.las",
+                  "origin_name":  "substation_origin.las",
+                  "station_grid_npz":  "outputs/phase1_feasible_space/station_grid_map.npz",
+                  "phase1_report_json":  "outputs/phase1_feasible_space/feasible_space_report.json",
+                  "output_dir":  "outputs/phase2_single_device/experiments/main_transformer_phase1_sweep/baseline_d0_2_0"
+              },
+    "filters":  {
+                    "exclude_name_keywords":  [
+
+                                              ],
+                    "include_name_keywords":  [
+                                                  "main_transformer"
+                                              ],
+                    "exclude_types":  [
+                                          "building",
+                                          "wires"
+                                      ]
+                },
+    "io":  {
+               "chunk_size":  800000
+           },
+    "device_type_keywords":  {
+                                 "transformer":  [
+                                                     "main_transformer",
+                                                     "transformer"
+                                                 ],
+                                 "shelf":  [
+                                               "shelf",
+                                               "gantry",
+                                               "frame"
+                                           ],
+                                 "tube":  [
+                                              "tube",
+                                              "gis_tube",
+                                              "gis"
+                                          ],
+                                 "wires":  [
+                                               "wire",
+                                               "wires",
+                                               "line",
+                                               "conductor"
+                                           ],
+                                 "capacitor":  [
+                                                   "capacitor"
+                                               ],
+                                 "building":  [
+                                                  "building",
+                                                  "room",
+                                                  "house",
+                                                  "control"
+                                              ],
+                                 "gantry":  [
+                                                "gantry",
+                                                "bus"
+                                            ],
+                                 "tower":  [
+                                               "tower",
+                                               "pole"
+                                           ],
+                                 "structure":  [
+                                                   "structure"
+                                               ]
+                             },
+    "camera":  {
+                   "hfov_deg":  84.0,
+                   "vfov_deg":  63.0,
+                   "pitch_deg":  0.0,
+                   "roll_deg":  0.0,
+                   "near_m":  0.3,
+                   "far_m":  30.0
+               },
+    "generation":  {
+                       "voxel_size_m":  0.2,
+                       "layer_window_vox":  1,
+                       "horizontal_overlap_ratio":  0.7,
+                       "vertical_overlap_ratio":  0.65,
+                       "min_layer_spacing_m":  0.6,
+                       "max_layer_spacing_m":  3.0,
+                       "min_points_per_component":  4,
+                       "max_viewpoints_per_layer":  120,
+                       "min_arc_step_m":  1.0,
+                       "max_arc_step_m":  2.8,
+                       "dedup_radius_m":  0.45,
+                       "density_scale":  {
+                                             "default":  1.0,
+                                             "by_type":  {
+                                                             "shelf":  0.9
+                                                         },
+                                             "by_device":  {
+                                                               "shelf1":  0.7,
+                                                               "shelf2":  0.75
+                                                           }
+                                         },
+                       "layer_spacing_scale":  {
+                                                   "default":  1.0,
+                                                   "by_type":  {
+
+                                                               },
+                                                   "by_device":  {
+                                                                     "shelf1":  1.2,
+                                                                     "shelf2":  1.15
+                                                                 }
+                                               },
+                       "density_regularization":  {
+                                                      "enable":  true,
+                                                      "min_spacing_m":  1.0,
+                                                      "max_spacing_m":  2.8,
+                                                      "fill_large_gap":  true,
+                                                      "max_add_ratio":  0.3
+                                                  },
+                       "max_viewpoints_per_device_by_name":  {
+                                                                 "shelf1":  220,
+                                                                 "shelf2":  220
+                                                             },
+                       "max_viewpoints_per_device_by_type":  {
+
+                                                             },
+                       "standoff":  {
+                                        "use_phase1_deff":  true,
+                                        "boundary_margin_m":  0.25,
+                                        "min_m":  2.2,
+                                        "max_m":  6.0,
+                                        "fallback_m":  3.5,
+                                        "per_type_m":  {
+                                                           "transformer":  4.0,
+                                                           "shelf":  3.5,
+                                                           "tube":  3.3,
+                                                           "wires":  3.8,
+                                                           "capacitor":  3.3,
+                                                           "default":  3.4
+                                                       }
+                                    }
+                   },
+    "feasibility":  {
+                        "enforce_station_free":  true,
+                        "search_extra_m":  3.0,
+                        "search_inward_m":  0.8,
+                        "search_step_m":  0.2,
+                        "allow_infeasible_if_none":  false
+                    },
+    "coverage":  {
+                     "enable":  true,
+                     "sample_surface_points":  2800,
+                     "max_points_test_per_viewpoint":  700,
+                     "occlusion_step_voxel":  0.6
+                 },
+    "planning":  {
+                     "enable_single_device_path_planning":  true,
+                     "voxel_connectivity":  26,
+                     "astar_roi_margin_m":  8.0,
+                     "astar_max_expansions":  180000
+                 },
+    "visualization":  {
+                          "max_surface_plot_points":  20000,
+                          "max_base_cloud_plot_points":  12000,
+                          "display_path_source":  "viewpoint_order",
+                          "path_display_min_step_m":  0.6,
+                          "path_display_max_points":  1800,
+                          "path_display_smooth_window":  5
+                      },
+    "coverage_visualization":  {
+                                   "enable":  false,
+                                   "max_plot_points":  3200,
+                                   "max_base_cloud_plot_points":  65000,
+                                   "gif_frames":  48,
+                                   "gif_fps":  10
+                               }
+}

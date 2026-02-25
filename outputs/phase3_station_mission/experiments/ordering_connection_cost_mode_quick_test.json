@@ -1,0 +1,33 @@
+{
+  "tested_at": "2026-02-24",
+  "note": "quick mode test for ordering.connection_cost.mode using balanced scenario, no full outputs",
+  "rows": [
+    {
+      "mode": "astar_hybrid",
+      "ordering_s": 44.82690530002583,
+      "path_smoothed_m": 2414.12665298642,
+      "coverage": 0.498426691925739,
+      "trackability_smoothed": 15.366180782877386,
+      "segment_success_ratio": 0.9018181818181819,
+      "scenario_total_s": 96.00873979998869
+    },
+    {
+      "mode": "line_or_euclidean",
+      "ordering_s": 0.003937200002837926,
+      "path_smoothed_m": 2419.934157412143,
+      "coverage": 0.498426691925739,
+      "trackability_smoothed": 15.549388169693543,
+      "segment_success_ratio": 0.9,
+      "scenario_total_s": 70.64986269999645
+    },
+    {
+      "mode": "euclidean",
+      "ordering_s": 0.00018060000729747117,
+      "path_smoothed_m": 2419.934157412143,
+      "coverage": 0.498426691925739,
+      "trackability_smoothed": 15.549388169693543,
+      "segment_success_ratio": 0.9,
+      "scenario_total_s": 54.282471999991685
+    }
+  ]
+}

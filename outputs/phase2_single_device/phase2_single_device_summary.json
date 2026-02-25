@@ -1,0 +1,12 @@
+{
+  "phase": "phase2_single_device",
+  "device_count": 8,
+  "global_coverage_ratio_weighted": 0.6292857142857143,
+  "sampled_surface_points_total": 22400,
+  "covered_surface_points_total": 14096,
+  "viewpoint_generation_time_total_s": 2.1392473000159953,
+  "viewpoint_generation_time_avg_per_viewpoint_ms": 3.0604396280629405,
+  "path_planning_time_total_s": 58.15454410001985,
+  "path_planning_time_avg_per_pair_ms": 84.15997698989848,
+  "summary_csv": "F:\\FINAL\\outputs\\phase2_single_device\\phase2_single_device_summary.csv"
+}

@@ -1,0 +1,310 @@
+{
+  "phase": "phase4_baselines",
+  "baseline_method": "fc_planner_lite",
+  "scenario": "unconstrained_native",
+  "device": "tube2",
+  "type": "tube",
+  "standoff_m": 3.9,
+  "raw_viewpoints": 44,
+  "ordered_viewpoints": 44,
+  "timing": {
+    "viewpoint_generation_time_s": 0.012616099964361638,
+    "viewpoint_reorder_time_s": 0.00425960001302883,
+    "coverage_eval_time_s": 1.4622231000103056,
+    "path_planning_time_s": 0.0009305999847128987,
+    "avg_path_planning_time_per_viewpoint_pair_ms": 0.0216418601096023,
+    "device_total_runtime_s": 6.318067500018515
+  },
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 1023,
+    "coverage_ratio": 0.3653571428571429
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 0.0,
+    "total_length_m": 270.4543718885626,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 53.5023163566525
+      },
+      {
+        "i": 1,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.817208662583529
+      },
+      {
+        "i": 2,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 3.1620095838078295
+      },
+      {
+        "i": 3,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.4896720986418255
+      },
+      {
+        "i": 4,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.490923227011075
+      },
+      {
+        "i": 5,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 27.1900929861561
+      },
+      {
+        "i": 6,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.6284182961548304
+      },
+      {
+        "i": 7,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.875770244775318
+      },
+      {
+        "i": 8,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.6778282142945615
+      },
+      {
+        "i": 9,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.0620976947232574
+      },
+      {
+        "i": 10,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 11.247602148976783
+      },
+      {
+        "i": 11,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.0661015695863245
+      },
+      {
+        "i": 12,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.25469222733088
+      },
+      {
+        "i": 13,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 4.768425504571422
+      },
+      {
+        "i": 14,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.6901890407862725
+      },
+      {
+        "i": 15,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.9861138770013205
+      },
+      {
+        "i": 16,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 6.288230861873467
+      },
+      {
+        "i": 17,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 0.8503812148906493
+      },
+      {
+        "i": 18,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 3.864740061710341
+      },
+      {
+        "i": 19,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 5.860729146411572
+      },
+      {
+        "i": 20,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.7941714279608094
+      },
+      {
+        "i": 21,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 16.103282979819234
+      },
+      {
+        "i": 22,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 3.256874539175607
+      },
+      {
+        "i": 23,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.5795758520699266
+      },
+      {
+        "i": 24,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 7.367308949478735
+      },
+      {
+        "i": 25,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 0.9576612795577456
+      },
+      {
+        "i": 26,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.4014946671764434
+      },
+      {
+        "i": 27,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.0219510069305804
+      },
+      {
+        "i": 28,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.7926245918889698
+      },
+      {
+        "i": 29,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.762833456305651
+      },
+      {
+        "i": 30,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.4949815662127948
+      },
+      {
+        "i": 31,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 8.87633496578682
+      },
+      {
+        "i": 32,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.9228448594192054
+      },
+      {
+        "i": 33,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.5114039622180577
+      },
+      {
+        "i": 34,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.3050692210449892
+      },
+      {
+        "i": 35,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 11.829345644058264
+      },
+      {
+        "i": 36,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.3718244466281444
+      },
+      {
+        "i": 37,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 3.655400137967376
+      },
+      {
+        "i": 38,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 29.969276527812006
+      },
+      {
+        "i": 39,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.464044668359963
+      },
+      {
+        "i": 40,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.589383616949581
+      },
+      {
+        "i": 41,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 3.5913722550442637
+      },
+      {
+        "i": 42,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 2.061768248757538
+      }
+    ]
+  },
+  "feasibility": {
+    "raw_total_count": 44,
+    "raw_infeasible_count": 41,
+    "raw_infeasible_ratio": 0.9318181818181818,
+    "projected_count": 0,
+    "dropped_count": 0,
+    "avg_projection_distance_m": 0.0,
+    "max_projection_distance_m": 0.0,
+    "apply_phase1_constraints": false,
+    "constraint_handling": "none",
+    "path_violation_length_ratio": 0.9714587004272831,
+    "path_violation_length_m": 262.73525263974017,
+    "segment_fallback_ratio": 1.0
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\unconstrained_native\\phase2_single_device\\tube2\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\unconstrained_native\\phase2_single_device\\tube2\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\unconstrained_native\\phase2_single_device\\tube2\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\unconstrained_native\\phase2_single_device\\tube2\\path_waypoints.csv",
+    "path_display_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\unconstrained_native\\phase2_single_device\\tube2\\path_waypoints_display.csv"
+  }
+}

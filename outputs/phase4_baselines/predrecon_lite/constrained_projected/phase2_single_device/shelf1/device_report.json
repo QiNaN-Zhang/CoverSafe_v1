@@ -1,0 +1,111 @@
+{
+  "phase": "phase4_baselines",
+  "baseline_method": "predrecon_lite",
+  "scenario": "constrained_projected",
+  "device": "shelf1",
+  "type": "shelf",
+  "standoff_m": 3.9999999999999996,
+  "raw_viewpoints": 10,
+  "ordered_viewpoints": 10,
+  "timing": {
+    "viewpoint_generation_time_s": 0.01772750000236556,
+    "viewpoint_reorder_time_s": 1.550000160932541e-05,
+    "coverage_eval_time_s": 0.5062590999878012,
+    "path_planning_time_s": 17.75206500000786,
+    "avg_path_planning_time_per_viewpoint_pair_ms": 1972.45166666754,
+    "device_total_runtime_s": 20.693255600053817
+  },
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 848,
+    "coverage_ratio": 0.3028571428571429
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 0.5555555555555556,
+    "total_length_m": 502.68423782075223,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 91,
+        "length_m": 33.93541200995822
+      },
+      {
+        "i": 1,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 106,
+        "length_m": 41.885893038739034
+      },
+      {
+        "i": 2,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 105,
+        "length_m": 35.384377522097495
+      },
+      {
+        "i": 3,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 102.97169513997524
+      },
+      {
+        "i": 4,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 13.936283579204309
+      },
+      {
+        "i": 5,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 109.18433953640054
+      },
+      {
+        "i": 6,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 106.83833581631642
+      },
+      {
+        "i": 7,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 48,
+        "length_m": 14.883109795523936
+      },
+      {
+        "i": 8,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 119,
+        "length_m": 43.66479138253709
+      }
+    ]
+  },
+  "feasibility": {
+    "raw_total_count": 10,
+    "raw_infeasible_count": 10,
+    "raw_infeasible_ratio": 1.0,
+    "projected_count": 10,
+    "dropped_count": 0,
+    "avg_projection_distance_m": 2.8428651129922295,
+    "max_projection_distance_m": 7.054122783029766,
+    "apply_phase1_constraints": true,
+    "constraint_handling": "project",
+    "path_violation_length_ratio": 0.5351782364582477,
+    "path_violation_length_m": 269.025663892269,
+    "segment_fallback_ratio": 0.4444444444444444
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\constrained_projected\\phase2_single_device\\shelf1\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\constrained_projected\\phase2_single_device\\shelf1\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\constrained_projected\\phase2_single_device\\shelf1\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\constrained_projected\\phase2_single_device\\shelf1\\path_waypoints.csv",
+    "path_display_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\constrained_projected\\phase2_single_device\\shelf1\\path_waypoints_display.csv"
+  }
+}

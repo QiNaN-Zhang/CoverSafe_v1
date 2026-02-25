@@ -1,0 +1,63 @@
+{
+  "scenario": "balanced",
+  "ordering_strategy": "region_constrained",
+  "timing_s": {
+    "compression_s": 0.003800500009674579,
+    "phase2_style_local_order_s": 1.700012944638729e-06,
+    "local_refinement_s": 0.0022004999918863177,
+    "ordering_s": 0.0008735000155866146,
+    "mission_assembly_s": 9.699998190626502e-05,
+    "planning_s": 0.008792400010861456,
+    "shortcut_s": 0.20437310001580045,
+    "smoothing_s": 0.0015492999809794128,
+    "trackability_eval_s": 0.0030308999703265727,
+    "output_and_visualization_s": 5.290253199986182,
+    "scenario_total_s": 5.515162500028964
+  },
+  "complexity": {
+    "symbolic": {
+      "device_compression": "O(sum_i N_i log N_i)",
+      "order_search": "O(C * D * 2^2 + C_conn)",
+      "path_planning": "O(S * (L_line + Astar))",
+      "shortcut": "O(P * H * line_check)",
+      "smoothing": "O(P * I * W)",
+      "trackability": "O(P)"
+    },
+    "variables": {
+      "D_devices": 8,
+      "C_order_candidates": 1,
+      "N_raw_viewpoints_total": 316,
+      "N_retained_viewpoints_total": 291,
+      "S_segments": 291,
+      "P_path_points_raw": 322,
+      "P_path_points_shortcut": 108,
+      "P_path_points_smoothed": 108,
+      "Astar_segments": 2,
+      "Astar_nodes_total": 34
+    },
+    "timing_seconds": {
+      "compression_s": 0.003800500009674579,
+      "phase2_style_local_order_s": 1.700012944638729e-06,
+      "local_refinement_s": 0.0022004999918863177,
+      "ordering_s": 0.0008735000155866146,
+      "mission_assembly_s": 9.699998190626502e-05,
+      "planning_s": 0.008792400010861456,
+      "shortcut_s": 0.20437310001580045,
+      "smoothing_s": 0.0015492999809794128,
+      "trackability_eval_s": 0.0030308999703265727,
+      "output_and_visualization_s": 5.290253199986182,
+      "scenario_total_s": 5.515162500028964
+    }
+  },
+  "planning_mode_counts": {
+    "straight": 2,
+    "astar": 2,
+    "fallback_direct": 287
+  },
+  "astar_nodes_total": 34,
+  "path_points": {
+    "raw": 322,
+    "shortcut": 108,
+    "smoothed": 108
+  }
+}

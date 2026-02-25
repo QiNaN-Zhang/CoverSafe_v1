@@ -1,0 +1,63 @@
+{
+  "scenario": "balanced",
+  "ordering_strategy": "region_constrained",
+  "timing_s": {
+    "compression_s": 0.006015799997840077,
+    "phase2_style_local_order_s": 1.7999554984271526e-06,
+    "local_refinement_s": 0.033153199998196214,
+    "ordering_s": 44.79704189999029,
+    "mission_assembly_s": 0.00023639999562874436,
+    "planning_s": 48.00486630003434,
+    "shortcut_s": 2.204040500044357,
+    "smoothing_s": 0.11308939999435097,
+    "trackability_eval_s": 0.06161639996571466,
+    "output_and_visualization_s": 5.13485639996361,
+    "scenario_total_s": 100.35516640002606
+  },
+  "complexity": {
+    "symbolic": {
+      "device_compression": "O(sum_i N_i log N_i)",
+      "order_search": "O(C * D * 2^2 + C_conn)",
+      "path_planning": "O(S * (L_line + Astar))",
+      "shortcut": "O(P * H * line_check)",
+      "smoothing": "O(P * I * W)",
+      "trackability": "O(P)"
+    },
+    "variables": {
+      "D_devices": 8,
+      "C_order_candidates": 1,
+      "N_raw_viewpoints_total": 699,
+      "N_retained_viewpoints_total": 550,
+      "S_segments": 550,
+      "P_path_points_raw": 11830,
+      "P_path_points_shortcut": 287,
+      "P_path_points_smoothed": 287,
+      "Astar_segments": 392,
+      "Astar_nodes_total": 12063
+    },
+    "timing_seconds": {
+      "compression_s": 0.006015799997840077,
+      "phase2_style_local_order_s": 1.7999554984271526e-06,
+      "local_refinement_s": 0.033153199998196214,
+      "ordering_s": 44.79704189999029,
+      "mission_assembly_s": 0.00023639999562874436,
+      "planning_s": 48.00486630003434,
+      "shortcut_s": 2.204040500044357,
+      "smoothing_s": 0.11308939999435097,
+      "trackability_eval_s": 0.06161639996571466,
+      "output_and_visualization_s": 5.13485639996361,
+      "scenario_total_s": 100.35516640002606
+    }
+  },
+  "planning_mode_counts": {
+    "straight": 104,
+    "astar": 392,
+    "fallback_direct": 54
+  },
+  "astar_nodes_total": 12063,
+  "path_points": {
+    "raw": 11830,
+    "shortcut": 287,
+    "smoothed": 287
+  }
+}

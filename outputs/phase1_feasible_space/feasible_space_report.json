@@ -1,0 +1,274 @@
+{
+  "inputs": {
+    "baseline": "F:\\FINAL\\pointclouds\\substation_baseline.las",
+    "device_files": [
+      "F:\\FINAL\\pointclouds\\building1.las",
+      "F:\\FINAL\\pointclouds\\building2.las",
+      "F:\\FINAL\\pointclouds\\building3.las",
+      "F:\\FINAL\\pointclouds\\capacitor.las",
+      "F:\\FINAL\\pointclouds\\main_transformer.las",
+      "F:\\FINAL\\pointclouds\\shelf1.las",
+      "F:\\FINAL\\pointclouds\\shelf2.las",
+      "F:\\FINAL\\pointclouds\\shelf3.las",
+      "F:\\FINAL\\pointclouds\\shelf4.las",
+      "F:\\FINAL\\pointclouds\\tube1.las",
+      "F:\\FINAL\\pointclouds\\tube2.las",
+      "F:\\FINAL\\pointclouds\\wires1.las",
+      "F:\\FINAL\\pointclouds\\wires2.las"
+    ]
+  },
+  "rotation": {
+    "angle_rad": -2.2281440123912257,
+    "angle_deg": -127.66324805736224
+  },
+  "flight_volume": {
+    "bounds_rotated": {
+      "x_min": -48.552582891012044,
+      "x_max": 81.34424283040101,
+      "y_min": -153.85686936265324,
+      "y_max": -43.20066266540521,
+      "z_min": 76.616297,
+      "z_max": 107.1633
+    },
+    "z_ground": 74.616297
+  },
+  "safety": {
+    "d0": 2.0,
+    "d_unc": 1.2,
+    "d_geom": 0.65,
+    "unsegmented_d_eff": 4.15,
+    "inspectable_device_types": [
+      "transformer",
+      "shelf",
+      "tube",
+      "wires",
+      "capacitor"
+    ],
+    "devices": [
+      {
+        "name": "building1",
+        "type": "building",
+        "d_eff": 3.15,
+        "occupied_voxel_count": 28554
+      },
+      {
+        "name": "building2",
+        "type": "building",
+        "d_eff": 3.15,
+        "occupied_voxel_count": 5906
+      },
+      {
+        "name": "building3",
+        "type": "building",
+        "d_eff": 3.15,
+        "occupied_voxel_count": 3587
+      },
+      {
+        "name": "capacitor",
+        "type": "capacitor",
+        "d_eff": 3.55,
+        "occupied_voxel_count": 6774
+      },
+      {
+        "name": "main_transformer",
+        "type": "transformer",
+        "d_eff": 4.25,
+        "occupied_voxel_count": 39565
+      },
+      {
+        "name": "shelf1",
+        "type": "shelf",
+        "d_eff": 3.7499999999999996,
+        "occupied_voxel_count": 30842
+      },
+      {
+        "name": "shelf2",
+        "type": "shelf",
+        "d_eff": 3.7499999999999996,
+        "occupied_voxel_count": 21826
+      },
+      {
+        "name": "shelf3",
+        "type": "shelf",
+        "d_eff": 3.7499999999999996,
+        "occupied_voxel_count": 6810
+      },
+      {
+        "name": "shelf4",
+        "type": "shelf",
+        "d_eff": 3.7499999999999996,
+        "occupied_voxel_count": 3551
+      },
+      {
+        "name": "tube1",
+        "type": "tube",
+        "d_eff": 3.65,
+        "occupied_voxel_count": 23546
+      },
+      {
+        "name": "tube2",
+        "type": "tube",
+        "d_eff": 3.65,
+        "occupied_voxel_count": 11875
+      },
+      {
+        "name": "wires1",
+        "type": "wires",
+        "d_eff": 4.15,
+        "occupied_voxel_count": 9063
+      },
+      {
+        "name": "wires2",
+        "type": "wires",
+        "d_eff": 4.15,
+        "occupied_voxel_count": 400
+      }
+    ]
+  },
+  "grid": {
+    "voxel_size": 0.3,
+    "shape": [
+      434,
+      370,
+      103
+    ],
+    "total_voxels": 16539740,
+    "blocked_voxels": 3695329,
+    "free_voxels": 12844411
+  },
+  "intermediate": {
+    "baseline_occupied_voxels": 228610,
+    "unsegmented_candidate_voxels": 4429,
+    "overlap_resolved_voxels": 7678,
+    "preprocessed_voxels": 166997,
+    "overlay_cloud_points": 120000,
+    "overlay_nofly_points": 120000,
+    "overlay_free_low_points": 100000,
+    "overlay_free_mid_points": 100000,
+    "overlay_free_full_points": 100000
+  },
+  "outputs": {
+    "grid_npz": "F:\\FINAL\\outputs\\phase1_feasible_space\\station_grid_map.npz",
+    "report_json": "F:\\FINAL\\outputs\\phase1_feasible_space\\feasible_space_report.json",
+    "preprocessed_pcd": "F:\\FINAL\\outputs\\phase1_feasible_space\\substation_preprocessed.pcd",
+    "plot_3d": "F:\\FINAL\\outputs\\phase1_feasible_space\\no_fly_zones_3d.png",
+    "plot_top": "F:\\FINAL\\outputs\\phase1_feasible_space\\no_fly_zones_topview.png",
+    "types_png": "F:\\FINAL\\outputs\\phase1_feasible_space\\device_types_overview.png",
+    "types_gif": "F:\\FINAL\\outputs\\phase1_feasible_space\\device_types_rotate.gif",
+    "overlay_png": "F:\\FINAL\\outputs\\phase1_feasible_space\\overlay_cloud_nofly.png",
+    "overlay_gif": "F:\\FINAL\\outputs\\phase1_feasible_space\\cloud_nofly_rotate.gif",
+    "compare_png": "F:\\FINAL\\outputs\\phase1_feasible_space\\overlay_compare_nofly_free.png",
+    "compare_gif": "F:\\FINAL\\outputs\\phase1_feasible_space\\cloud_nofly_free_compare_rotate.gif",
+    "free_bands_png": "F:\\FINAL\\outputs\\phase1_feasible_space\\overlay_free_bands.png",
+    "free_bands_gif": "F:\\FINAL\\outputs\\phase1_feasible_space\\cloud_free_bands_rotate.gif",
+    "free_scan_png": "F:\\FINAL\\outputs\\phase1_feasible_space\\free_space_layer_scan_preview.png",
+    "free_scan_gif": "F:\\FINAL\\outputs\\phase1_feasible_space\\free_space_layer_scan.gif",
+    "free_scan_iso_png": "F:\\FINAL\\outputs\\phase1_feasible_space\\free_space_layer_scan_iso_preview.png",
+    "free_scan_iso_gif": "F:\\FINAL\\outputs\\phase1_feasible_space\\free_space_layer_scan_iso.gif"
+  },
+  "sweep": {
+    "enabled": true,
+    "low_altitude_agl": 2.5,
+    "mid_altitude_agl": 10.0,
+    "rows": [
+      {
+        "mode": "dynamic",
+        "name": "dynamic_d0_1.8",
+        "d0": 1.8,
+        "k_gps": 1.0,
+        "d_ctrl": 0.2,
+        "blocked_voxels": 3488239,
+        "free_voxels": 13051501,
+        "free_pct": 78.90995263528932,
+        "free_ratio_low": 0.47386349483123674,
+        "free_ratio_mid": 0.6854029144351725,
+        "npz_path": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps\\station_grid_map_dynamic_dynamic_d0_1_8.npz"
+      },
+      {
+        "mode": "dynamic",
+        "name": "dynamic_d0_2.0",
+        "d0": 2.0,
+        "k_gps": 1.0,
+        "d_ctrl": 0.2,
+        "blocked_voxels": 3695329,
+        "free_voxels": 12844411,
+        "free_pct": 77.65787733059891,
+        "free_ratio_low": 0.4546332046332046,
+        "free_ratio_mid": 0.665033005355586,
+        "npz_path": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps\\station_grid_map_dynamic_dynamic_d0_2_0.npz"
+      },
+      {
+        "mode": "dynamic",
+        "name": "dynamic_d0_2.3",
+        "d0": 2.3,
+        "k_gps": 1.0,
+        "d_ctrl": 0.2,
+        "blocked_voxels": 3998139,
+        "free_voxels": 12541601,
+        "free_pct": 75.82707466985575,
+        "free_ratio_low": 0.4212417486611035,
+        "free_ratio_mid": 0.636355710549259,
+        "npz_path": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps\\station_grid_map_dynamic_dynamic_d0_2_3.npz"
+      },
+      {
+        "mode": "dynamic",
+        "name": "dynamic_d0_2.6",
+        "d0": 2.6,
+        "k_gps": 1.1,
+        "d_ctrl": 0.25,
+        "blocked_voxels": 4471922,
+        "free_voxels": 12067818,
+        "free_pct": 72.96256168476651,
+        "free_ratio_low": 0.3831361315232283,
+        "free_ratio_mid": 0.5898368414497447,
+        "npz_path": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps\\station_grid_map_dynamic_dynamic_d0_2_6.npz"
+      },
+      {
+        "mode": "static",
+        "name": "static_d3.30",
+        "d0": null,
+        "k_gps": null,
+        "d_ctrl": null,
+        "static_d_eff": 3.3,
+        "blocked_voxels": 3142375,
+        "free_voxels": 13397365,
+        "free_pct": 81.00106168537111,
+        "free_ratio_low": 0.4979138124299415,
+        "free_ratio_mid": 0.7319653755137626,
+        "npz_path": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps\\station_grid_map_static_static_3_30.npz"
+      },
+      {
+        "mode": "static",
+        "name": "static_d3.80",
+        "d0": null,
+        "k_gps": null,
+        "d_ctrl": null,
+        "static_d_eff": 3.8,
+        "blocked_voxels": 3640881,
+        "free_voxels": 12898859,
+        "free_pct": 77.98707234817476,
+        "free_ratio_low": 0.4491842072487234,
+        "free_ratio_mid": 0.67714534811309,
+        "npz_path": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps\\station_grid_map_static_static_3_80.npz"
+      },
+      {
+        "mode": "static",
+        "name": "static_d4.30",
+        "d0": null,
+        "k_gps": null,
+        "d_ctrl": null,
+        "static_d_eff": 4.3,
+        "blocked_voxels": 4170534,
+        "free_voxels": 12369206,
+        "free_pct": 74.78476687057959,
+        "free_ratio_low": 0.40320089674928383,
+        "free_ratio_mid": 0.6145597210113339,
+        "npz_path": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps\\station_grid_map_static_static_4_30.npz"
+      }
+    ],
+    "plot_path": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps\\sweep_free_space_compare.png",
+    "summary_path": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps\\sweep_summary.json",
+    "csv_path": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps\\sweep_summary.csv",
+    "output_dir": "F:\\FINAL\\outputs\\phase1_feasible_space\\sweep_maps"
+  }
+}

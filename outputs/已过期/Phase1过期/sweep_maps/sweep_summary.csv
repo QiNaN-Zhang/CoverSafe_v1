@@ -1,0 +1,8 @@
+﻿mode,name,d0,k_gps,d_ctrl,static_d_eff,blocked_voxels,free_voxels,free_pct,free_ratio_low,free_ratio_mid,npz_path
+dynamic,dynamic_d0_1.8,1.8,1.0,0.2,,3488239,13051501,78.90995263528932,0.47386349483123674,0.6854029144351725,F:\FINAL\outputs\sweep_maps\station_grid_map_dynamic_dynamic_d0_1_8.npz
+dynamic,dynamic_d0_2.0,2.0,1.0,0.2,,3695329,12844411,77.65787733059891,0.4546332046332046,0.665033005355586,F:\FINAL\outputs\sweep_maps\station_grid_map_dynamic_dynamic_d0_2_0.npz
+dynamic,dynamic_d0_2.3,2.3,1.0,0.2,,3998139,12541601,75.82707466985575,0.4212417486611035,0.636355710549259,F:\FINAL\outputs\sweep_maps\station_grid_map_dynamic_dynamic_d0_2_3.npz
+dynamic,dynamic_d0_2.6,2.6,1.1,0.25,,4471922,12067818,72.96256168476651,0.3831361315232283,0.5898368414497447,F:\FINAL\outputs\sweep_maps\station_grid_map_dynamic_dynamic_d0_2_6.npz
+static,static_d3.30,,,,3.3,3142375,13397365,81.00106168537111,0.4979138124299415,0.7319653755137626,F:\FINAL\outputs\sweep_maps\station_grid_map_static_static_3_30.npz
+static,static_d3.80,,,,3.8,3640881,12898859,77.98707234817476,0.4491842072487234,0.67714534811309,F:\FINAL\outputs\sweep_maps\station_grid_map_static_static_3_80.npz
+static,static_d4.30,,,,4.3,4170534,12369206,74.78476687057959,0.40320089674928383,0.6145597210113339,F:\FINAL\outputs\sweep_maps\station_grid_map_static_static_4_30.npz

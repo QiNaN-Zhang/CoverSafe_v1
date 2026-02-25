@@ -1,0 +1,450 @@
+{
+  "phase": "phase4_baselines",
+  "baseline_method": "fc_planner_lite",
+  "scenario": "constrained_projected",
+  "device": "main_transformer",
+  "type": "transformer",
+  "standoff_m": 4.5,
+  "raw_viewpoints": 60,
+  "ordered_viewpoints": 60,
+  "timing": {
+    "viewpoint_generation_time_s": 0.007155700004659593,
+    "viewpoint_reorder_time_s": 0.007967500016093254,
+    "coverage_eval_time_s": 2.6136269999551587,
+    "path_planning_time_s": 2.2539691000129096,
+    "avg_path_planning_time_per_viewpoint_pair_ms": 38.20286610191372,
+    "device_total_runtime_s": 10.305697500007227
+  },
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 1115,
+    "coverage_ratio": 0.3982142857142857
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 0.9152542372881356,
+    "total_length_m": 304.43735614983416,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.0
+      },
+      {
+        "i": 1,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 17,
+        "length_m": 5.984814896812882
+      },
+      {
+        "i": 2,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 3.5924074484064574
+      },
+      {
+        "i": 3,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 15,
+        "length_m": 6.167924692336813
+      },
+      {
+        "i": 4,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 17,
+        "length_m": 6.490483659759765
+      },
+      {
+        "i": 5,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 12,
+        "length_m": 3.958845726812007
+      },
+      {
+        "i": 6,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 26,
+        "length_m": 9.687539934607472
+      },
+      {
+        "i": 7,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 3,
+        "length_m": 0.8196152422706554
+      },
+      {
+        "i": 8,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 3.907373864235846
+      },
+      {
+        "i": 9,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 7,
+        "length_m": 2.1438793109825895
+      },
+      {
+        "i": 10,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 3.4124435233141424
+      },
+      {
+        "i": 11,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 1.4762379152070357
+      },
+      {
+        "i": 12,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 9,
+        "length_m": 2.8392304845413117
+      },
+      {
+        "i": 13,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 6,
+        "length_m": 1.8438793109825884
+      },
+      {
+        "i": 14,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 55,
+        "length_m": 18.68528137423856
+      },
+      {
+        "i": 15,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 8,
+        "length_m": 2.5392304845413234
+      },
+      {
+        "i": 16,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 16,
+        "length_m": 5.283109795523919
+      },
+      {
+        "i": 17,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 18,
+        "length_m": 7.067924692336805
+      },
+      {
+        "i": 18,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 13,
+        "length_m": 5.03334303423676
+      },
+      {
+        "i": 19,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 17,
+        "length_m": 6.1379918606780155
+      },
+      {
+        "i": 20,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 3.5634945532532494
+      },
+      {
+        "i": 21,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 18,
+        "length_m": 6.255902001659695
+      },
+      {
+        "i": 22,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 10,
+        "length_m": 3.1681433796945186
+      },
+      {
+        "i": 23,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 31,
+        "length_m": 10.863961030678944
+      },
+      {
+        "i": 24,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 1.6431676725154984
+      },
+      {
+        "i": 25,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 3.313608305156175
+      },
+      {
+        "i": 26,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 3.343879310982593
+      },
+      {
+        "i": 27,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 20,
+        "length_m": 8.011804003319408
+      },
+      {
+        "i": 28,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 19,
+        "length_m": 6.841955522335919
+      },
+      {
+        "i": 29,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 3.687758621965173
+      },
+      {
+        "i": 30,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 20,
+        "length_m": 7.945365724913861
+      },
+      {
+        "i": 31,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 3,
+        "length_m": 0.8196152422706718
+      },
+      {
+        "i": 32,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 3.56349455325326
+      },
+      {
+        "i": 33,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 4,
+        "length_m": 1.1196152422706667
+      },
+      {
+        "i": 34,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 16,
+        "length_m": 5.092407448406457
+      },
+      {
+        "i": 35,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 4,
+        "length_m": 1.1196152422706667
+      },
+      {
+        "i": 36,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.30000000000001137
+      },
+      {
+        "i": 37,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.5999999999999943
+      },
+      {
+        "i": 38,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 15.959323293924474
+      },
+      {
+        "i": 39,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 12,
+        "length_m": 3.6438793109825927
+      },
+      {
+        "i": 40,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 8,
+        "length_m": 2.3196152422706553
+      },
+      {
+        "i": 41,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 8,
+        "length_m": 2.319615242270671
+      },
+      {
+        "i": 42,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 14,
+        "length_m": 4.243879310982589
+      },
+      {
+        "i": 43,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 7.98811617341661
+      },
+      {
+        "i": 44,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 122,
+        "length_m": 44.267049942905984
+      },
+      {
+        "i": 45,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 1.8973665961010096
+      },
+      {
+        "i": 46,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 0.6708203932499432
+      },
+      {
+        "i": 47,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 5.7784080852774755
+      },
+      {
+        "i": 48,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 9,
+        "length_m": 2.839230484541332
+      },
+      {
+        "i": 49,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 20,
+        "length_m": 6.8848148968128875
+      },
+      {
+        "i": 50,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 23,
+        "length_m": 7.258845726811986
+      },
+      {
+        "i": 51,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 7,
+        "length_m": 2.4877586219651637
+      },
+      {
+        "i": 52,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.8999999999999986
+      },
+      {
+        "i": 53,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 4,
+        "length_m": 1.243879310982595
+      },
+      {
+        "i": 54,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.9940296360911904
+      },
+      {
+        "i": 55,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 5.545166419059279
+      },
+      {
+        "i": 56,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 4.499781312642299
+      },
+      {
+        "i": 57,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 17,
+        "length_m": 6.929714144301091
+      },
+      {
+        "i": 58,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 18,
+        "length_m": 7.44071689847261
+      }
+    ]
+  },
+  "feasibility": {
+    "raw_total_count": 60,
+    "raw_infeasible_count": 54,
+    "raw_infeasible_ratio": 0.9,
+    "projected_count": 54,
+    "dropped_count": 0,
+    "avg_projection_distance_m": 2.0458159627966443,
+    "max_projection_distance_m": 7.738386317682886,
+    "apply_phase1_constraints": true,
+    "constraint_handling": "project",
+    "path_violation_length_ratio": 0.10954612539083922,
+    "path_violation_length_m": 33.34993279044546,
+    "segment_fallback_ratio": 0.0847457627118644
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\main_transformer\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\main_transformer\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\main_transformer\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\main_transformer\\path_waypoints.csv",
+    "path_display_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\main_transformer\\path_waypoints_display.csv"
+  }
+}

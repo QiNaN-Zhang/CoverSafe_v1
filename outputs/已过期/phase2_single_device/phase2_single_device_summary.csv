@@ -1,0 +1,11 @@
+﻿device,type,standoff_m,raw_viewpoints,ordered_viewpoints,coverage_ratio,sampled_surface_points,covered_surface_points,path_length_m,path_segment_success_ratio,report_json
+capacitor,capacitor,3.8,25,25,0.2857142857142857,2800,800,255.24608663637326,1.0,F:\FINAL\outputs\phase2_single_device\capacitor\device_report.json
+main_transformer,transformer,4.5,54,54,0.3557142857142857,2800,996,1024.7051592564649,0.9811320754716981,F:\FINAL\outputs\phase2_single_device\main_transformer\device_report.json
+shelf1,shelf,3.9999999999999996,225,225,0.9257142857142857,2800,2592,6790.683893572883,0.90625,F:\FINAL\outputs\phase2_single_device\shelf1\device_report.json
+shelf2,shelf,3.9999999999999996,214,214,0.875,2800,2450,8751.164443395246,0.8403755868544601,F:\FINAL\outputs\phase2_single_device\shelf2\device_report.json
+shelf3,shelf,3.9999999999999996,52,52,0.7578571428571429,2800,2122,599.429507290222,1.0,F:\FINAL\outputs\phase2_single_device\shelf3\device_report.json
+shelf4,shelf,3.9999999999999996,53,53,0.7396428571428572,2800,2071,558.3729691280404,1.0,F:\FINAL\outputs\phase2_single_device\shelf4\device_report.json
+tube1,tube,3.9,21,21,0.21785714285714286,2800,610,399.3662680665004,0.9,F:\FINAL\outputs\phase2_single_device\tube1\device_report.json
+tube2,tube,3.9,13,13,0.15928571428571428,2800,446,550.3289982982949,0.8333333333333334,F:\FINAL\outputs\phase2_single_device\tube2\device_report.json
+wires1,wires,4.4,22,22,0.25357142857142856,2800,710,413.4647740359228,1.0,F:\FINAL\outputs\phase2_single_device\wires1\device_report.json
+wires2,wires,4.4,4,4,0.9321808510638298,752,701,47.09272194604344,1.0,F:\FINAL\outputs\phase2_single_device\wires2\device_report.json

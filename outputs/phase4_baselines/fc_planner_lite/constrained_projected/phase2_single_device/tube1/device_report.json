@@ -1,0 +1,402 @@
+{
+  "phase": "phase4_baselines",
+  "baseline_method": "fc_planner_lite",
+  "scenario": "constrained_projected",
+  "device": "tube1",
+  "type": "tube",
+  "standoff_m": 3.9,
+  "raw_viewpoints": 53,
+  "ordered_viewpoints": 53,
+  "timing": {
+    "viewpoint_generation_time_s": 0.014006000012159348,
+    "viewpoint_reorder_time_s": 0.019611600029747933,
+    "coverage_eval_time_s": 8.719597499992233,
+    "path_planning_time_s": 7.731359199970029,
+    "avg_path_planning_time_per_viewpoint_pair_ms": 148.67998461480823,
+    "device_total_runtime_s": 30.82401199999731
+  },
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 1263,
+    "coverage_ratio": 0.45107142857142857
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 0.9615384615384616,
+    "total_length_m": 340.60547581981405,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 16,
+        "length_m": 5.684814896812886
+      },
+      {
+        "i": 1,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 19,
+        "length_m": 7.1193965549129725
+      },
+      {
+        "i": 2,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 217,
+        "length_m": 75.57898565192883
+      },
+      {
+        "i": 3,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 45,
+        "length_m": 18.68176856866739
+      },
+      {
+        "i": 4,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 6,
+        "length_m": 2.187758621965189
+      },
+      {
+        "i": 5,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 3.563494553253254
+      },
+      {
+        "i": 6,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 38,
+        "length_m": 13.726770419148792
+      },
+      {
+        "i": 7,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.0
+      },
+      {
+        "i": 8,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.5196152422706665
+      },
+      {
+        "i": 9,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 7,
+        "length_m": 2.268143379694513
+      },
+      {
+        "i": 10,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 26,
+        "length_m": 8.465199654542237
+      },
+      {
+        "i": 11,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 17.533967035442952
+      },
+      {
+        "i": 12,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 14,
+        "length_m": 4.272792206135769
+      },
+      {
+        "i": 13,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.0
+      },
+      {
+        "i": 14,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 10,
+        "length_m": 2.8242640687119263
+      },
+      {
+        "i": 15,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 3,
+        "length_m": 0.7242640687119216
+      },
+      {
+        "i": 16,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 12,
+        "length_m": 3.8924074484064586
+      },
+      {
+        "i": 17,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.0
+      },
+      {
+        "i": 18,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.42426406871192446
+      },
+      {
+        "i": 19,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11,
+        "length_m": 4.499781312642289
+      },
+      {
+        "i": 20,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.0
+      },
+      {
+        "i": 21,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 27,
+        "length_m": 9.051253175218436
+      },
+      {
+        "i": 22,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 5,
+        "length_m": 1.3242640687119402
+      },
+      {
+        "i": 23,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 5,
+        "length_m": 1.4485281374238717
+      },
+      {
+        "i": 24,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 13,
+        "length_m": 3.848528137423859
+      },
+      {
+        "i": 25,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 5,
+        "length_m": 1.5438793109825935
+      },
+      {
+        "i": 26,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 34,
+        "length_m": 11.180166070371634
+      },
+      {
+        "i": 27,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.6000000000000085
+      },
+      {
+        "i": 28,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 15,
+        "length_m": 5.012022690677104
+      },
+      {
+        "i": 29,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 14.163685960935444
+      },
+      {
+        "i": 30,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.0
+      },
+      {
+        "i": 31,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 25,
+        "length_m": 10.390264972402063
+      },
+      {
+        "i": 32,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 3,
+        "length_m": 0.8196152422706554
+      },
+      {
+        "i": 33,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 9,
+        "length_m": 3.336286759389041
+      },
+      {
+        "i": 34,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 16,
+        "length_m": 4.997056274847711
+      },
+      {
+        "i": 35,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 32,
+        "length_m": 10.418376618407352
+      },
+      {
+        "i": 36,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.0
+      },
+      {
+        "i": 37,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 13,
+        "length_m": 4.0970562748476995
+      },
+      {
+        "i": 38,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 3,
+        "length_m": 0.8485281374238589
+      },
+      {
+        "i": 39,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 9,
+        "length_m": 2.9634945532532493
+      },
+      {
+        "i": 40,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 6,
+        "length_m": 2.187758621965179
+      },
+      {
+        "i": 41,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 6,
+        "length_m": 1.6242640687119274
+      },
+      {
+        "i": 42,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 27,
+        "length_m": 10.397857523995624
+      },
+      {
+        "i": 43,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 2,
+        "length_m": 0.42426406871192446
+      },
+      {
+        "i": 44,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 4.378355855797932
+      },
+      {
+        "i": 45,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 8,
+        "length_m": 2.5681433796945283
+      },
+      {
+        "i": 46,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 13,
+        "length_m": 4.192407448406444
+      },
+      {
+        "i": 47,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 113,
+        "length_m": 35.215432893255056
+      },
+      {
+        "i": 48,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 42,
+        "length_m": 16.39763883663791
+      },
+      {
+        "i": 49,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 4,
+        "length_m": 1.1196152422706689
+      },
+      {
+        "i": 50,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 3.2631541157504267
+      },
+      {
+        "i": 51,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.8999999999999915
+      }
+    ]
+  },
+  "feasibility": {
+    "raw_total_count": 53,
+    "raw_infeasible_count": 52,
+    "raw_infeasible_ratio": 0.9811320754716981,
+    "projected_count": 52,
+    "dropped_count": 0,
+    "avg_projection_distance_m": 4.594157513462815,
+    "max_projection_distance_m": 8.289059427696772,
+    "apply_phase1_constraints": true,
+    "constraint_handling": "project",
+    "path_violation_length_ratio": 0.0939205324144312,
+    "path_violation_length_m": 31.989847632267875,
+    "segment_fallback_ratio": 0.038461538461538464
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\tube1\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\tube1\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\tube1\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\tube1\\path_waypoints.csv",
+    "path_display_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\tube1\\path_waypoints_display.csv"
+  }
+}

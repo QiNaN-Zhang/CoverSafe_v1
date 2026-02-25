@@ -1,0 +1,189 @@
+{
+  "phase": "phase4_baselines",
+  "baseline_method": "fc_planner_lite",
+  "scenario": "constrained_projected",
+  "device": "shelf3",
+  "type": "shelf",
+  "standoff_m": 3.9999999999999996,
+  "raw_viewpoints": 21,
+  "ordered_viewpoints": 21,
+  "timing": {
+    "viewpoint_generation_time_s": 0.005105399992316961,
+    "viewpoint_reorder_time_s": 0.003016200033016503,
+    "coverage_eval_time_s": 2.7884606999577954,
+    "path_planning_time_s": 1.0296628000214696,
+    "avg_path_planning_time_per_viewpoint_pair_ms": 51.48314000107348,
+    "device_total_runtime_s": 6.928302599990275
+  },
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 2409,
+    "coverage_ratio": 0.8603571428571428
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 0.95,
+    "total_length_m": 153.27096305082637,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 10,
+        "length_m": 3.512022690677101
+      },
+      {
+        "i": 1,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 17,
+        "length_m": 6.767924692336803
+      },
+      {
+        "i": 2,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 19,
+        "length_m": 6.021320343559641
+      },
+      {
+        "i": 3,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 12,
+        "length_m": 4.82869420779549
+      },
+      {
+        "i": 4,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 39,
+        "length_m": 14.963057178537845
+      },
+      {
+        "i": 5,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 7.106609406976592
+      },
+      {
+        "i": 6,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 21,
+        "length_m": 6.563494553253255
+      },
+      {
+        "i": 7,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 17,
+        "length_m": 5.6784609690826535
+      },
+      {
+        "i": 8,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 46,
+        "length_m": 16.126770419148805
+      },
+      {
+        "i": 9,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 37,
+        "length_m": 13.704211451725845
+      },
+      {
+        "i": 10,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 26,
+        "length_m": 8.904430139083567
+      },
+      {
+        "i": 11,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 46,
+        "length_m": 15.314747728471701
+      },
+      {
+        "i": 12,
+        "mode": "straight",
+        "ok": true,
+        "length_m": 0.0
+      },
+      {
+        "i": 13,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 11.292918134831242
+      },
+      {
+        "i": 14,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 14,
+        "length_m": 5.743660623624888
+      },
+      {
+        "i": 15,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 23,
+        "length_m": 8.539011797183612
+      },
+      {
+        "i": 16,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 9,
+        "length_m": 2.648528137423856
+      },
+      {
+        "i": 17,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 7,
+        "length_m": 2.172792206135785
+      },
+      {
+        "i": 18,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 28,
+        "length_m": 9.591168824543134
+      },
+      {
+        "i": 19,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 12,
+        "length_m": 3.6727922061357794
+      }
+    ]
+  },
+  "feasibility": {
+    "raw_total_count": 21,
+    "raw_infeasible_count": 19,
+    "raw_infeasible_ratio": 0.9047619047619048,
+    "projected_count": 19,
+    "dropped_count": 0,
+    "avg_projection_distance_m": 3.229545230231121,
+    "max_projection_distance_m": 9.61799494038457,
+    "apply_phase1_constraints": true,
+    "constraint_handling": "project",
+    "path_violation_length_ratio": 0.07989899730106473,
+    "path_violation_length_m": 12.246196263129585,
+    "segment_fallback_ratio": 0.05
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\shelf3\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\shelf3\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\shelf3\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\shelf3\\path_waypoints.csv",
+    "path_display_csv": "F:\\FINAL\\outputs\\phase4_baselines\\fc_planner_lite\\constrained_projected\\phase2_single_device\\shelf3\\path_waypoints_display.csv"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "phase": "phase2_single_device",
+  "device_count": 10,
+  "global_coverage_ratio_weighted": 0.5201140567200987,
+  "sampled_surface_points_total": 25952,
+  "covered_surface_points_total": 13498,
+  "summary_csv": "F:\\FINAL\\outputs\\phase2_single_device\\phase2_single_device_summary.csv"
+}

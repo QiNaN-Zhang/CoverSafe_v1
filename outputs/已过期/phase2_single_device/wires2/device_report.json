@@ -1,0 +1,50 @@
+{
+  "device": "wires2",
+  "type": "wires",
+  "standoff_m": 4.4,
+  "voxel_size_m": 0.2,
+  "device_shape": [
+    147,
+    130,
+    23
+  ],
+  "raw_viewpoints": 4,
+  "ordered_viewpoints": 4,
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 752,
+    "covered_surface_points": 701,
+    "coverage_ratio": 0.9321808510638298
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 1.0,
+    "total_length_m": 47.09272194604344,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 17
+      },
+      {
+        "i": 1,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 121
+      },
+      {
+        "i": 2,
+        "mode": "straight",
+        "ok": true
+      }
+    ]
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase2_single_device\\wires2\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase2_single_device\\wires2\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase2_single_device\\wires2\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase2_single_device\\wires2\\path_waypoints.csv",
+    "plot_png": "F:\\FINAL\\outputs\\phase2_single_device\\wires2\\device_plan.png"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "scenario": "balanced",
+      "retained_viewpoints_total": 550,
+      "global_retention_ratio": 0.7868383404864091,
+      "estimated_global_coverage_ratio": 0.498426691925739,
+      "path_length_raw_m": 5238.02110246707,
+      "path_length_shortcut_m": 2459.775311209321,
+      "path_length_smoothed_m": 2414.12665298642,
+      "segment_success_ratio": 0.9018181818181819,
+      "trackability_raw": 5.1826263342397985,
+      "trackability_shortcut": 14.926644483288632,
+      "trackability_smoothed": 15.366180782877386,
+      "max_turn_raw_deg": 180.0,
+      "max_turn_shortcut_deg": 179.2198815644788,
+      "max_turn_smoothed_deg": 179.2198815644788,
+      "low_clearance_raw_ratio": 0.9117945251774248,
+      "low_clearance_shortcut_ratio": 0.958904109589041,
+      "low_clearance_smoothed_ratio": 0.9315068493150684,
+      "region_order_match": true,
+      "strict_device_order_match": true,
+      "estimated_order_cost_m": 443.79043160911,
+      "scenario_total_s": 100.35516640002606,
+      "ordering_strategy": "region_constrained"
+    }
+  ]
+}

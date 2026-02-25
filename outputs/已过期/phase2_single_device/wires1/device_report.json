@@ -1,0 +1,156 @@
+{
+  "device": "wires1",
+  "type": "wires",
+  "standoff_m": 4.4,
+  "voxel_size_m": 0.2,
+  "device_shape": [
+    257,
+    352,
+    21
+  ],
+  "raw_viewpoints": 22,
+  "ordered_viewpoints": 22,
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 710,
+    "coverage_ratio": 0.25357142857142856
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 1.0,
+    "total_length_m": 413.4647740359228,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 62
+      },
+      {
+        "i": 1,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 63
+      },
+      {
+        "i": 2,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 18
+      },
+      {
+        "i": 3,
+        "mode": "straight",
+        "ok": true
+      },
+      {
+        "i": 4,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 64
+      },
+      {
+        "i": 5,
+        "mode": "straight",
+        "ok": true
+      },
+      {
+        "i": 6,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 57
+      },
+      {
+        "i": 7,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 59
+      },
+      {
+        "i": 8,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 60
+      },
+      {
+        "i": 9,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 62
+      },
+      {
+        "i": 10,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 64
+      },
+      {
+        "i": 11,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 107
+      },
+      {
+        "i": 12,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 59
+      },
+      {
+        "i": 13,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 11
+      },
+      {
+        "i": 14,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 65
+      },
+      {
+        "i": 15,
+        "mode": "straight",
+        "ok": true
+      },
+      {
+        "i": 16,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 15
+      },
+      {
+        "i": 17,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 78
+      },
+      {
+        "i": 18,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 82
+      },
+      {
+        "i": 19,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 73
+      },
+      {
+        "i": 20,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 102
+      }
+    ]
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase2_single_device\\wires1\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase2_single_device\\wires1\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase2_single_device\\wires1\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase2_single_device\\wires1\\path_waypoints.csv",
+    "plot_png": "F:\\FINAL\\outputs\\phase2_single_device\\wires1\\device_plan.png"
+  }
+}

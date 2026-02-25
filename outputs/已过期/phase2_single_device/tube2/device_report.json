@@ -1,0 +1,102 @@
+{
+  "device": "tube2",
+  "type": "tube",
+  "standoff_m": 3.9,
+  "voxel_size_m": 0.2,
+  "device_shape": [
+    504,
+    121,
+    110
+  ],
+  "raw_viewpoints": 13,
+  "ordered_viewpoints": 13,
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 446,
+    "coverage_ratio": 0.15928571428571428
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 0.8333333333333334,
+    "total_length_m": 550.3289982982949,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 47
+      },
+      {
+        "i": 1,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 51
+      },
+      {
+        "i": 2,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 139
+      },
+      {
+        "i": 3,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 120
+      },
+      {
+        "i": 4,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 8
+      },
+      {
+        "i": 5,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 123
+      },
+      {
+        "i": 6,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 174
+      },
+      {
+        "i": 7,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 178
+      },
+      {
+        "i": 8,
+        "mode": "straight",
+        "ok": true
+      },
+      {
+        "i": 9,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 136
+      },
+      {
+        "i": 10,
+        "mode": "fallback_direct",
+        "ok": false
+      },
+      {
+        "i": 11,
+        "mode": "fallback_direct",
+        "ok": false
+      }
+    ]
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase2_single_device\\tube2\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase2_single_device\\tube2\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase2_single_device\\tube2\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase2_single_device\\tube2\\path_waypoints.csv",
+    "plot_png": "F:\\FINAL\\outputs\\phase2_single_device\\tube2\\device_plan.png"
+  }
+}

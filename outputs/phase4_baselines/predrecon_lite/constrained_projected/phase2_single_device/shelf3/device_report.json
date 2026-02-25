@@ -1,0 +1,59 @@
+{
+  "phase": "phase4_baselines",
+  "baseline_method": "predrecon_lite",
+  "scenario": "constrained_projected",
+  "device": "shelf3",
+  "type": "shelf",
+  "standoff_m": 3.9999999999999996,
+  "raw_viewpoints": 2,
+  "ordered_viewpoints": 2,
+  "timing": {
+    "viewpoint_generation_time_s": 0.00579910003580153,
+    "viewpoint_reorder_time_s": 4.299974534660578e-06,
+    "coverage_eval_time_s": 0.08328300004359335,
+    "path_planning_time_s": 1.6451296999584883,
+    "avg_path_planning_time_per_viewpoint_pair_ms": 1645.1296999584883,
+    "device_total_runtime_s": 3.0095276999636553
+  },
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 153,
+    "coverage_ratio": 0.054642857142857146
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 1.0,
+    "total_length_m": 41.808422903451714,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "astar",
+        "ok": true,
+        "nodes": 121,
+        "length_m": 41.808422903451714
+      }
+    ]
+  },
+  "feasibility": {
+    "raw_total_count": 2,
+    "raw_infeasible_count": 2,
+    "raw_infeasible_ratio": 1.0,
+    "projected_count": 2,
+    "dropped_count": 0,
+    "avg_projection_distance_m": 0.3893875749446226,
+    "max_projection_distance_m": 0.5684519528846913,
+    "apply_phase1_constraints": true,
+    "constraint_handling": "project",
+    "path_violation_length_ratio": 0.01014781326939035,
+    "path_violation_length_m": 0.4242640687119311,
+    "segment_fallback_ratio": 0.0
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\constrained_projected\\phase2_single_device\\shelf3\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\constrained_projected\\phase2_single_device\\shelf3\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\constrained_projected\\phase2_single_device\\shelf3\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\constrained_projected\\phase2_single_device\\shelf3\\path_waypoints.csv",
+    "path_display_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\constrained_projected\\phase2_single_device\\shelf3\\path_waypoints_display.csv"
+  }
+}

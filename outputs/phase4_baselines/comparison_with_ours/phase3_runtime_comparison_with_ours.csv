@@ -1,0 +1,6 @@
+label,runtime_s,source
+Ours-balanced,100.60096209996846,ours_lightweight
+FC-Planner (CON),83.74325159995351,baseline_phase3
+FC-Planner (UN),5.764606000040658,baseline_phase3
+PredRecon (CON),101.09247440000763,baseline_phase3
+PredRecon (UN),5.442365300026722,baseline_phase3

@@ -1,0 +1,70 @@
+{
+  "phase": "phase4_baselines",
+  "baseline_method": "predrecon_lite",
+  "scenario": "unconstrained_native",
+  "device": "tube1",
+  "type": "tube",
+  "standoff_m": 3.9,
+  "raw_viewpoints": 4,
+  "ordered_viewpoints": 4,
+  "timing": {
+    "viewpoint_generation_time_s": 0.00842739996733144,
+    "viewpoint_reorder_time_s": 4.8999791033566e-06,
+    "coverage_eval_time_s": 0.19073929998558015,
+    "path_planning_time_s": 0.00011399999493733048,
+    "avg_path_planning_time_per_viewpoint_pair_ms": 0.037999998312443495,
+    "device_total_runtime_s": 4.404308500001207
+  },
+  "coverage": {
+    "enabled": true,
+    "sampled_surface_points": 2800,
+    "covered_surface_points": 76,
+    "coverage_ratio": 0.027142857142857142
+  },
+  "planning": {
+    "enabled": true,
+    "segment_success_ratio": 0.0,
+    "total_length_m": 167.9307344199364,
+    "segments": [
+      {
+        "i": 0,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 15.162567452964831
+      },
+      {
+        "i": 1,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 57.438572829683686
+      },
+      {
+        "i": 2,
+        "mode": "fallback_direct",
+        "ok": false,
+        "length_m": 95.32959413728788
+      }
+    ]
+  },
+  "feasibility": {
+    "raw_total_count": 4,
+    "raw_infeasible_count": 4,
+    "raw_infeasible_ratio": 1.0,
+    "projected_count": 0,
+    "dropped_count": 0,
+    "avg_projection_distance_m": 0.0,
+    "max_projection_distance_m": 0.0,
+    "apply_phase1_constraints": false,
+    "constraint_handling": "none",
+    "path_violation_length_ratio": 1.0,
+    "path_violation_length_m": 167.9307344199364,
+    "segment_fallback_ratio": 1.0
+  },
+  "outputs": {
+    "capture_raw_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\unconstrained_native\\phase2_single_device\\tube1\\viewpoints_capture_raw.csv",
+    "capture_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\unconstrained_native\\phase2_single_device\\tube1\\viewpoints_capture_ordered.csv",
+    "nav_ordered_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\unconstrained_native\\phase2_single_device\\tube1\\viewpoints_nav_ordered.csv",
+    "path_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\unconstrained_native\\phase2_single_device\\tube1\\path_waypoints.csv",
+    "path_display_csv": "F:\\FINAL\\outputs\\phase4_baselines\\predrecon_lite\\unconstrained_native\\phase2_single_device\\tube1\\path_waypoints_display.csv"
+  }
+}
