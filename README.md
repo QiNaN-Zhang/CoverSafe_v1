@@ -2,7 +2,6 @@
 
 
 
-
 ## Project Overview
 
 This repository contains a multi-phase planning pipeline for UAV-based substation inspection:
@@ -99,7 +98,8 @@ python phases/phase3_station_mission/run_phase3.py --config phases/phase3_statio
 |-- scripts/
 |   `-- install_requirements.py
 |-- pointclouds/
-|   `-- .gitkeep
+|   |-- .gitkeep
+|   `-- <14 required .las files downloaded from Google Drive>
 |-- phases/
 |   |-- phase1_feasible_space/
 |   |-- phase2_single_device/
