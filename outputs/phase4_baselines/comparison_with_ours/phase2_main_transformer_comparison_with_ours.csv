@@ -1,6 +1,0 @@
-label,group,device,coverage_ratio,ordered_viewpoints,viewpoint_generation_time_s,path_planning_time_s,path_segment_success_ratio
-Ours-balanced,ours,main_transformer,0.3989285714285714,75,0.4049480000103358,8.33961300001829,0.9864864864864865
-FC-Planner (CON),baseline,main_transformer,0.3982142857142857,60,0.007155700004659593,2.2539691000129096,0.9152542372881356
-FC-Planner (UN),baseline,main_transformer,0.36392857142857143,60,0.007300600002054125,0.0010297000408172607,0.0
-PredRecon (CON),baseline,main_transformer,0.05392857142857143,2,0.007497899990994483,0.5410935000400059,1.0
-PredRecon (UN),baseline,main_transformer,0.048214285714285716,2,0.007854400028008968,7.650000043213367e-05,0.0

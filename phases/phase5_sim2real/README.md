@@ -1,6 +1,3 @@
-﻿# Phase 5 Placeholder
+# Phase 5: Sim2Real
 
-待实现：
-1. 实机约束建模（飞控、速度、悬停误差）。
-2. 执行日志与离线指标回放。
-3. Sim2Real 参数回归与鲁棒性验证。
+Coming Soon.

@@ -1,12 +1,12 @@
-﻿{
+{
   "random_seed": 7,
   "paths": {
-    "project_root": "simplified",
-    "baseline_las": "简化版模型/substation.las",
-    "origin_las": "简化版模型/substation_origin_not_used.las",
-    "device_search_dirs": ["简化版模型", "."],
+    "project_root": ".",
+    "baseline_las": "pointclouds/substation_baseline.las",
+    "origin_las": "pointclouds/substation_origin.las",
+    "device_search_dirs": ["pointclouds", "."],
     "device_recursive": false,
-    "output_dir": "outputs_smoke"
+    "output_dir": "outputs_smoke/phase1_feasible_space"
   },
   "io": {
     "chunk_size": 300000

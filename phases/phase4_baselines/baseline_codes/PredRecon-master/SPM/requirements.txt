@@ -1,4 +1,0 @@
-open3d
-matplotlib
-tensorboardX
-einops

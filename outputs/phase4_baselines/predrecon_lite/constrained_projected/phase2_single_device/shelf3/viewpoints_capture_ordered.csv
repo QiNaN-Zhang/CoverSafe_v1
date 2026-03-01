@@ -1,3 +1,0 @@
-﻿viewpoint_id,device,device_type,role,x,y,z,yaw_deg,pitch_deg,roll_deg,target_x,target_y,target_z,layer_k,component_id
-0,shelf3,shelf,inspect_capture,-10.6026,-122.5069,83.0663,-8.23,0.00,0.00,-6.5000,-123.1000,83.1000,0,133
-1,shelf3,shelf,inspect_capture,22.0974,-127.3069,86.9663,172.14,0.00,0.00,17.7000,-126.7000,85.9000,1,1

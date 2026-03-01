@@ -1,8 +1,0 @@
-method,scenario,label,estimated_global_coverage_ratio,path_length_smoothed_m,segment_success_ratio,trackability_smoothed,group
-ours,balanced,ours/balanced,0.498426691925739,2414.12665298642,0.9018181818181819,15.366180782877386,ours
-fc_planner_lite,constrained_projected,fc_planner_lite/constrained_projected,0.4031780367373301,1381.0213380588366,0.9367088607594937,11.140375417475493,baseline
-fc_planner_lite,unconstrained_native,fc_planner_lite/unconstrained_native,0.4148365016463718,1196.3821824575627,0.013745704467353952,14.553781100007996,baseline
-predrecon_lite,constrained_projected,predrecon_lite/constrained_projected,0.1465625,1361.0422472679365,0.5454545454545454,28.869707517503784,baseline
-predrecon_lite,unconstrained_native,predrecon_lite/unconstrained_native,0.06977678571428571,1857.1026029493075,0.0,31.51179335660521,baseline
-ours,conservative,ours/conservative,0.5425827280862161,2996.746058582344,0.9071310116086235,12.147801710097953,ours_variant
-ours,aggressive,ours/aggressive,0.4417502461090028,1704.9200375621408,0.8935281837160751,17.281986595158443,ours_variant

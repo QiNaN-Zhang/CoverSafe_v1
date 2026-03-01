@@ -1,3 +1,0 @@
-﻿viewpoint_id,device,device_type,role,x,y,z,yaw_deg,pitch_deg,roll_deg,target_x,target_y,target_z,layer_k,component_id
-0,main_transformer,transformer,inspect_capture,-2.0659,-96.3962,78.3646,22.15,0.00,0.00,2.1000,-94.7000,78.5000,0,71
-1,main_transformer,transformer,inspect_capture,24.1737,-92.5622,84.8217,167.45,0.00,0.00,20.3000,-91.7000,82.7000,1,63

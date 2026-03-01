@@ -1,2 +1,0 @@
-﻿mode,ordering_connection_cost_mode,ordering_s,planning_s,scenario_total_s,scenario_total_s_wall,coverage,trackability_smoothed,path_length_smoothed_m,segment_success_ratio,strict_device_order_match,region_order_match,delta_ordering_s_vs_astar,delta_scenario_total_s_vs_astar,delta_coverage_vs_astar,delta_trackability_vs_astar,delta_path_length_m_vs_astar,delta_segment_success_vs_astar
-euclidean,euclidean,0.00016159997903741896,51.17799980001291,53.64253579999786,53.64295179999317,0.498426691925739,15.549388169693543,2419.934157412143,0.9,True,True,0.0,0.0,0.0,0.0,0.0,0.0

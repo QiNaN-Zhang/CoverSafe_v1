@@ -1,4 +1,8 @@
-﻿.venv/
+.venv/
 __pycache__/
+outputs/
+outputs_smoke/
+pointclouds/*.las
+!pointclouds/.gitkeep
 pointclouds/substation_baseline.las
 pointclouds/substation_origin.las
