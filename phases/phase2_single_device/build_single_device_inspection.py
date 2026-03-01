@@ -1645,186 +1645,11 @@ def main() -> None:
         n_pairs = max(1, len(ordered_vps) - 1)
         t_plan_pair_ms = float((t_plan / n_pairs) * 1000.0)
 
-        vis_cfg = cfg.get("visualization", {})
-        cov_vis_cfg = cfg.get("coverage_visualization", {})
-        base_cloud_n = int(max(vis_cfg.get("max_base_cloud_plot_points", 24000), cov_vis_cfg.get("max_base_cloud_plot_points", 55000)))
-        base_cloud_xyz, base_cloud_rgb = sample_las_visual_cloud(
-            las_path=las_path,
-            chunk_size=int(cfg["io"]["chunk_size"]),
-            max_points=base_cloud_n,
-            seed=int(cfg["random_seed"]) + i * 29,
-            angle_rad=angle_rad,
-        )
-        base_cloud_plan_xyz, base_cloud_plan_rgb = trim_visual_ground_points(
-            dv=dv,
-            device_name=name,
-            device_type=device_type,
-            xyz=base_cloud_xyz,
-            rgb=base_cloud_rgb,
-            ground_filter_cfg=cfg.get("ground_filter", {}),
-            purpose="plan",
-        )
-        base_cloud_cov_xyz, base_cloud_cov_rgb = trim_visual_ground_points(
-            dv=dv,
-            device_name=name,
-            device_type=device_type,
-            xyz=base_cloud_xyz,
-            rgb=base_cloud_rgb,
-            ground_filter_cfg=cfg.get("ground_filter", {}),
-            purpose="coverage",
-        )
-
         dev_dir = out_dir / name
         ensure_dir(dev_dir)
-        write_capture_csv(dev_dir / "viewpoints_capture_raw.csv", raw_vps)
         write_capture_csv(dev_dir / "viewpoints_capture_ordered.csv", ordered_vps)
         write_nav_csv(dev_dir / "viewpoints_nav_ordered.csv", ordered_vps)
         write_path_csv(dev_dir / "path_waypoints.csv", path_res["path_points"])
-        display_source = str(vis_cfg.get("display_path_source", "viewpoint_order"))
-        path_for_plot = path_res["path_points"]
-        if display_source == "viewpoint_order" and ordered_vps:
-            path_for_plot = np.array([[v.x, v.y, v.z] for v in ordered_vps], dtype=np.float64)
-        preserve_all_plot_path = bool(vis_cfg.get("display_preserve_waypoints", True)) and display_source == "viewpoint_order"
-        path_plot = visualize_device_plan(
-            dv=dv,
-            ordered_vps=ordered_vps,
-            path_pts=path_for_plot,
-            out_png=dev_dir / "device_plan.png",
-            max_surface_plot_points=int(cfg["visualization"]["max_surface_plot_points"]),
-            seed=int(cfg["random_seed"]) + i * 31,
-            base_cloud_xyz=base_cloud_plan_xyz,
-            base_cloud_rgb=base_cloud_plan_rgb,
-            path_display_min_step_m=float(vis_cfg.get("path_display_min_step_m", 0.6)),
-            path_display_max_points=int(vis_cfg.get("path_display_max_points", 1800)),
-            path_display_smooth_window=int(vis_cfg.get("path_display_smooth_window", 5)),
-            preserve_all_path_points=preserve_all_plot_path,
-        )
-        plan_gif_cfg = cfg.get("visualization", {})
-        if bool(plan_gif_cfg.get("device_plan_gif_enable", True)):
-            visualize_device_plan_gif(
-                dv=dv,
-                ordered_vps=ordered_vps,
-                path_pts=path_plot,
-                out_gif=dev_dir / "device_plan_rotate.gif",
-                base_cloud_xyz=base_cloud_plan_xyz,
-                base_cloud_rgb=base_cloud_plan_rgb,
-                gif_frames=int(plan_gif_cfg.get("device_plan_gif_frames", 48)),
-                gif_fps=int(plan_gif_cfg.get("device_plan_gif_fps", 10)),
-            )
-        write_path_csv(dev_dir / "path_waypoints_display.csv", path_plot)
-        visualize_generation_diagnostics(
-            dv=dv,
-            raw_vps=raw_vps,
-            ordered_vps=ordered_vps,
-            out_png=dev_dir / "generation_diagnostics.png",
-        )
-        if bool(cov_vis_cfg.get("enable", True)) and cov.get("surface_world", np.empty((0, 3))).shape[0] > 0:
-            visualize_coverage_map(
-                device_name=name,
-                ordered_vps=ordered_vps,
-                base_cloud_xyz=base_cloud_cov_xyz,
-                base_cloud_rgb=base_cloud_cov_rgb,
-                surface_world=cov["surface_world"],
-                covered_mask=cov["covered_mask"],
-                out_png=dev_dir / "coverage_map.png",
-                out_gif=dev_dir / "coverage_map_rotate.gif",
-                max_points=int(cov_vis_cfg.get("max_plot_points", 2800)),
-                gif_frames=int(cov_vis_cfg.get("gif_frames", 48)),
-                gif_fps=int(cov_vis_cfg.get("gif_fps", 10)),
-                seed=int(cfg["random_seed"]) + i * 37,
-            )
-
-        baseline_compare = None
-        cmp_cfg = cfg.get("reorder_baseline_compare", {})
-        cmp_enable = bool(cmp_cfg.get("enable", False))
-        cmp_names = {str(x).lower() for x in cmp_cfg.get("device_names", ["main_transformer"])}
-        if cmp_enable and (name.lower() in cmp_names):
-            t_br0 = time.perf_counter()
-            tsp_vps = reorder_viewpoints_tsp_global(
-                clone_viewpoints(raw_vps),
-                two_opt_iter=int(cmp_cfg.get("tsp_2opt_iter", 1)),
-            )
-            t_br = float(time.perf_counter() - t_br0)
-            t_bp0 = time.perf_counter()
-            tsp_path = build_single_device_path(ordered_vps=tsp_vps, station=station, cfg=cfg)
-            t_bp = float(time.perf_counter() - t_bp0)
-            tsp_pairs = max(1, len(tsp_vps) - 1)
-            tsp_pair_plan_ms = float((t_bp / tsp_pairs) * 1000.0)
-            tsp_cov = evaluate_coverage(
-                dv=dv,
-                ordered_vps=tsp_vps,
-                cfg=cfg,
-                seed=int(cfg["random_seed"]) + i * 41,
-                return_details=False,
-            )
-            display_source_cmp = str(vis_cfg.get("display_path_source", "viewpoint_order"))
-            tsp_path_for_plot = tsp_path["path_points"]
-            if display_source_cmp == "viewpoint_order" and tsp_vps:
-                tsp_path_for_plot = np.array([[v.x, v.y, v.z] for v in tsp_vps], dtype=np.float64)
-            preserve_all_plot_path_cmp = bool(vis_cfg.get("display_preserve_waypoints", True)) and display_source_cmp == "viewpoint_order"
-            if preserve_all_plot_path_cmp:
-                tsp_path_plot = tsp_path_for_plot.copy()
-            else:
-                tsp_path_plot = simplify_path_for_display(
-                    tsp_path_for_plot,
-                    min_step_m=float(vis_cfg.get("path_display_min_step_m", 0.6)),
-                    max_points=int(vis_cfg.get("path_display_max_points", 1800)),
-                )
-                tsp_path_plot = smooth_path_for_display(
-                    tsp_path_plot,
-                    window_size=int(vis_cfg.get("path_display_smooth_window", 5)),
-                )
-            ours_pairs = max(1, len(ordered_vps) - 1)
-            baseline_compare = {
-                "baseline": "global_tsp_nn_2opt",
-                "proposed": {
-                    "ordered_viewpoints": int(len(ordered_vps)),
-                    "coverage_ratio": float(cov.get("coverage_ratio", 0.0)),
-                    "path_length_m": float(path_res.get("total_length_m", 0.0)),
-                    "avg_path_length_per_viewpoint_pair_m": float(path_res.get("total_length_m", 0.0) / ours_pairs),
-                    "avg_pair_path_length_m": float(path_res.get("avg_segment_length_m", 0.0)),
-                    "min_pair_path_length_m": float(path_res.get("min_segment_length_m", 0.0)),
-                    "max_pair_path_length_m": float(path_res.get("max_segment_length_m", 0.0)),
-                    "reorder_time_s": float(t_reorder),
-                    "path_planning_time_s": float(t_plan),
-                    "avg_path_planning_time_per_viewpoint_pair_ms": float(t_plan_pair_ms),
-                    "segment_success_ratio": float(path_res.get("segment_success_ratio", 1.0 if len(ordered_vps) <= 1 else 0.0)),
-                },
-                "baseline_global_tsp_nn_2opt": {
-                    "ordered_viewpoints": int(len(tsp_vps)),
-                    "coverage_ratio": float(tsp_cov.get("coverage_ratio", 0.0)),
-                    "path_length_m": float(tsp_path.get("total_length_m", 0.0)),
-                    "avg_path_length_per_viewpoint_pair_m": float(tsp_path.get("total_length_m", 0.0) / tsp_pairs),
-                    "avg_pair_path_length_m": float(tsp_path.get("avg_segment_length_m", 0.0)),
-                    "min_pair_path_length_m": float(tsp_path.get("min_segment_length_m", 0.0)),
-                    "max_pair_path_length_m": float(tsp_path.get("max_segment_length_m", 0.0)),
-                    "reorder_time_s": float(t_br),
-                    "path_planning_time_s": float(t_bp),
-                    "avg_path_planning_time_per_viewpoint_pair_ms": float(tsp_pair_plan_ms),
-                    "segment_success_ratio": float(tsp_path.get("segment_success_ratio", 1.0 if len(tsp_vps) <= 1 else 0.0)),
-                },
-            }
-            with (dev_dir / "reorder_baseline_compare.json").open("w", encoding="utf-8") as f:
-                json.dump(
-                    {
-                        "device": name,
-                        **baseline_compare,
-                    },
-                    f,
-                    ensure_ascii=False,
-                    indent=2,
-                )
-            if bool(cmp_cfg.get("write_compare_png", True)):
-                visualize_reorder_baseline_compare(
-                    device_name=name,
-                    base_cloud_xyz=base_cloud_plan_xyz,
-                    base_cloud_rgb=base_cloud_plan_rgb,
-                    ours_vps=ordered_vps,
-                    ours_path_plot=path_plot,
-                    baseline_vps=tsp_vps,
-                    baseline_path_plot=tsp_path_plot,
-                    out_png=dev_dir / "reorder_baseline_compare.png",
-                )
 
         t_dev = float(time.perf_counter() - t_dev0)
 
@@ -1865,22 +1690,11 @@ def main() -> None:
                 "segments": path_res["segments"],
             },
             "outputs": {
-                "capture_raw_csv": str(dev_dir / "viewpoints_capture_raw.csv"),
                 "capture_ordered_csv": str(dev_dir / "viewpoints_capture_ordered.csv"),
                 "nav_ordered_csv": str(dev_dir / "viewpoints_nav_ordered.csv"),
                 "path_csv": str(dev_dir / "path_waypoints.csv"),
-                "path_display_csv": str(dev_dir / "path_waypoints_display.csv"),
-                "plot_png": str(dev_dir / "device_plan.png"),
-                "plot_gif": str(dev_dir / "device_plan_rotate.gif"),
-                "generation_diagnostics_png": str(dev_dir / "generation_diagnostics.png"),
-                "coverage_map_png": str(dev_dir / "coverage_map.png"),
-                "coverage_map_gif": str(dev_dir / "coverage_map_rotate.gif"),
-                "reorder_baseline_compare_json": str(dev_dir / "reorder_baseline_compare.json"),
-                "reorder_baseline_compare_png": str(dev_dir / "reorder_baseline_compare.png"),
             },
         }
-        if baseline_compare is not None:
-            report["reorder_baseline_compare"] = baseline_compare
         with (dev_dir / "device_report.json").open("w", encoding="utf-8") as f:
             json.dump(report, f, ensure_ascii=False, indent=2)
 

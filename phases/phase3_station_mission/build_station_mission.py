@@ -2769,172 +2769,15 @@ def run_single_scenario(
     if write_full_outputs:
         t0 = time.perf_counter()
         ensure_dir(out_dir)
-        experiments_dir = out_dir / "experiments"
-        ensure_dir(experiments_dir)
 
         order_meta = {b["device"]: {"region": b["region"], "order_index": b["order_index"]} for b in boundaries}
         write_capture_mission_csv(out_dir / "mission_waypoints_capture.csv", mission_caps, order_meta=order_meta)
         write_nav_csv(out_dir / "mission_waypoints_nav.csv", mission_nav)
         write_path_csv(out_dir / "path_waypoints.csv", path_raw)
-        write_path_csv(out_dir / "path_waypoints_shortcut.csv", path_short)
         write_path_csv(out_dir / "path_waypoints_display.csv", path_smooth)
-        write_segments_csv(out_dir / "path_segments.csv", segments)
-        write_json(
-            out_dir / "phase3_complexity_and_timing.json",
-            {
-                "scenario": scenario_name,
-                "ordering_strategy": result.get("ordering_strategy"),
-                "timing_s": timing,
-                "complexity": complexity,
-                "planning_mode_counts": seg_modes,
-                "astar_nodes_total": int(astar_nodes_total),
-                "path_points": result["path_points"],
-            },
-        )
-        write_json(
-            out_dir / "phase3_coverage_summary.json",
-            {
-                "estimated_global_coverage_ratio": float(estimated_global_cov),
-                "global_retention_ratio": float(global_retention_ratio),
-                "retained_viewpoints_total": int(retained_total),
-                "raw_viewpoints_total": int(raw_total),
-            },
-        )
-
-        seg_len_by_start_wp = {int(s["start_wp_id"]): float(s["length_m"]) for s in segments}
-        summary_rows = []
-        for b in boundaries:
-            d = b["device"]
-            dd = device_data[d]
-            start_wp = int(b["start_wp_id"])
-            end_wp = int(b["end_wp_id"])
-            entry_trans = float(seg_len_by_start_wp.get(start_wp - 1, 0.0)) if start_wp > 0 else 0.0
-            intra = float(sum(seg_len_by_start_wp.get(i, 0.0) for i in range(start_wp, end_wp)))
-            exit_trans = float(seg_len_by_start_wp.get(end_wp, 0.0)) if end_wp < (len(mission_caps) - 1) else 0.0
-            summary_rows.append(
-                {
-                    "device": d,
-                    "device_type": b["device_type"],
-                    "region": b["region"],
-                    "order_index": b["order_index"],
-                    "reverse": b["reverse"],
-                    "raw_viewpoints": b["raw_viewpoints"],
-                    "retained_viewpoints": b["retained_viewpoints"],
-                    "retention_ratio": b["retention_ratio"],
-                    "phase2_coverage_ratio": dd.phase2_coverage_ratio,
-                    "estimated_phase3_coverage_ratio": b["estimated_coverage_ratio"],
-                    "phase2_path_length_m": dd.phase2_path_length_m,
-                    "phase2_path_segment_success_ratio": dd.phase2_path_segment_success_ratio,
-                    "entry_transition_length_m": entry_trans,
-                    "intra_device_length_m": intra,
-                    "exit_transition_length_m": exit_trans,
-                }
-            )
-        write_device_summary_csv(out_dir / "phase3_station_mission_summary.csv", summary_rows)
-
-        vis_cfg = cfg.get("visualization", {})
-        visualize_station_mission(
-            out_png=out_dir / "station_mission_plan.png",
-            out_gif=out_dir / "station_mission_rotate.gif",
-            routes=routes,
-            order=order,
-            start_pt=start_xyz,
-            path_raw=np.empty((0, 3), dtype=np.float64),
-            path_smooth=path_smooth,
-            vis_cfg=vis_cfg,
-        )
-
-        gcfg = cfg.get("global_cloud_visualization", {})
-        root = Path(cfg["paths"]["project_root"]).resolve()
-        las_path = (root / gcfg.get("station_baseline_las", "pointclouds/substation_baseline.las")).resolve()
-        cloud_xyz, cloud_rgb = sample_las_rgb_cloud(
-            las_path=las_path,
-            max_points=int(gcfg.get("max_points", 120000)),
-            chunk_size=int(gcfg.get("chunk_size", 1000000)),
-            seed=int(cfg.get("random_seed", 42)) + 303,
-            angle_rad=float(phase1_report.get("rotation", {}).get("angle_rad", 0.0)),
-        )
-        visualize_station_rgb_path(
-            out_png=out_dir / "station_mission_rgb_path.png",
-            out_gif=out_dir / "station_mission_rgb_path_rotate.gif",
-            cloud_xyz=cloud_xyz,
-            cloud_rgb=cloud_rgb,
-            path_smooth=path_smooth,
-            start_pt=start_xyz,
-            vis_cfg=gcfg,
-        )
-
-        local_regions = [str(x) for x in cfg.get("local_refinement", {}).get("target_regions", [])]
-        visualize_local_region_details(
-            out_png=out_dir / "station_mission_local_refine_details.png",
-            target_regions=local_regions,
-            boundaries=boundaries,
-            wp_to_path_idx_raw=wp_to_path,
-            wp_to_path_idx_short=wp_to_path_short,
-            wp_to_path_idx_smooth=wp_to_path_smooth,
-            mission_wp=mission_nav,
-            path_raw=path_raw,
-            path_short=path_short,
-            path_smooth=path_smooth,
-            cloud_xyz=cloud_xyz,
-            cloud_rgb=cloud_rgb,
-            margin_m=float(cfg.get("local_refinement", {}).get("detail_margin_m", 8.0)),
-            selection_mode="balanced",
-        )
-        visualize_local_region_details(
-            out_png=out_dir / "station_mission_local_refine_details_smoothing_focus.png",
-            target_regions=local_regions,
-            boundaries=boundaries,
-            wp_to_path_idx_raw=wp_to_path,
-            wp_to_path_idx_short=wp_to_path_short,
-            wp_to_path_idx_smooth=wp_to_path_smooth,
-            mission_wp=mission_nav,
-            path_raw=path_raw,
-            path_short=path_short,
-            path_smooth=path_smooth,
-            cloud_xyz=cloud_xyz,
-            cloud_rgb=cloud_rgb,
-            margin_m=float(cfg.get("local_refinement", {}).get("detail_margin_m", 8.0)),
-            selection_mode="smoothing_advantage",
-        )
-
-        sim_cfg = cfg.get("simulation", {})
-        if bool(sim_cfg.get("enable", True)):
-            create_station_simulation_gif(
-                out_gif=out_dir / "station_mission_simulation.gif",
-                cloud_xyz=cloud_xyz,
-                cloud_rgb=cloud_rgb,
-                path_smooth=path_smooth,
-                mission_wp_path_idx=wp_to_path_smooth,
-                start_pt=start_xyz,
-                cfg=sim_cfg,
-            )
-        sim_fpv_cfg = cfg.get("simulation_fpv", {})
-        if bool(sim_fpv_cfg.get("enable", True)):
-            create_station_simulation_fpv_gif(
-                out_gif=out_dir / "station_mission_simulation_fpv.gif",
-                cloud_xyz=cloud_xyz,
-                path_smooth=path_smooth,
-                mission_caps=mission_caps,
-                mission_wp_path_idx=wp_to_path_smooth,
-                cfg=sim_fpv_cfg,
-            )
         timing["output_and_visualization_s"] = float(time.perf_counter() - t0)
 
     timing["scenario_total_s"] = float(time.perf_counter() - t_s0)
-    if write_full_outputs:
-        write_json(
-            out_dir / "phase3_complexity_and_timing.json",
-            {
-                "scenario": scenario_name,
-                "ordering_strategy": result.get("ordering_strategy"),
-                "timing_s": timing,
-                "complexity": complexity,
-                "planning_mode_counts": seg_modes,
-                "astar_nodes_total": int(astar_nodes_total),
-                "path_points": result["path_points"],
-            },
-        )
 
     return result
 
@@ -3017,7 +2860,6 @@ def main() -> None:
     phase1_report_path = (root / cfg["paths"]["phase1_report_json"]).resolve()
     out_dir = (root / cfg["paths"]["output_dir"]).resolve()
     ensure_dir(out_dir)
-    ensure_dir(out_dir / "experiments")
 
     phase1_report = load_json(phase1_report_path)
     station = StationGrid(phase1_grid)
@@ -3028,129 +2870,26 @@ def main() -> None:
     log(f"Phase3 output dir: {out_dir}")
     log(f"Loaded devices: {len(device_data)}")
 
-    exp_cfg = cfg.get("experiments", {})
-    exp_enable = bool(exp_cfg.get("enable", True))
-    scenarios = exp_cfg.get("scenarios", [])
-    if (not exp_enable) or (not scenarios):
-        scenarios = [{"name": cfg["mission"].get("primary_scenario", "default")}]
-    primary_name = str(cfg["mission"].get("primary_scenario", scenarios[0]["name"]))
-    names = [str(s.get("name", "")) for s in scenarios]
-    if primary_name not in names:
-        primary_name = names[0]
-
-    experiment_rows: List[dict] = []
-    scenario_results: Dict[str, dict] = {}
-    primary_result: Optional[dict] = None
-    for s in scenarios:
-        sname = str(s.get("name", "scenario"))
-        scenario_cfg = deep_update(cfg, s)
-        log(f"Scenario: {sname}")
-        res = run_single_scenario(
-            cfg=scenario_cfg,
-            station=station,
-            phase1_report=phase1_report,
-            device_data=device_data,
-            region_sequence=region_sequence,
-            out_dir=out_dir,
-            scenario_name=sname,
-            write_full_outputs=(sname == primary_name),
-        )
-        row = {
-            "scenario": sname,
-            "retained_viewpoints_total": int(res["retained_viewpoints_total"]),
-            "global_retention_ratio": float(res["global_retention_ratio"]),
-            "estimated_global_coverage_ratio": float(res["estimated_global_coverage_ratio"]),
-            "path_length_raw_m": float(res["path_length_raw_m"]),
-            "path_length_shortcut_m": float(res.get("path_length_shortcut_m", res["path_length_raw_m"])),
-            "path_length_smoothed_m": float(res["path_length_smoothed_m"]),
-            "segment_success_ratio": float(res["segment_success_ratio"]),
-            "trackability_raw": float(res["trackability_raw"]["trackability_score_0_100"]),
-            "trackability_shortcut": float(res.get("trackability_shortcut", res["trackability_raw"])["trackability_score_0_100"]),
-            "trackability_smoothed": float(res["trackability_smoothed"]["trackability_score_0_100"]),
-            "max_turn_raw_deg": float(res["trackability_raw"]["max_turn_angle_deg"]),
-            "max_turn_shortcut_deg": float(res.get("trackability_shortcut", res["trackability_raw"])["max_turn_angle_deg"]),
-            "max_turn_smoothed_deg": float(res["trackability_smoothed"]["max_turn_angle_deg"]),
-            "low_clearance_raw_ratio": float(res["trackability_raw"]["low_clearance_ratio"]),
-            "low_clearance_shortcut_ratio": float(res.get("trackability_shortcut", res["trackability_raw"])["low_clearance_ratio"]),
-            "low_clearance_smoothed_ratio": float(res["trackability_smoothed"]["low_clearance_ratio"]),
-            "region_order_match": bool(res["order_match"]["region_order_match"]),
-            "strict_device_order_match": bool(res["order_match"]["strict_device_order_match"]),
-            "estimated_order_cost_m": float(res["estimated_order_cost_m"]),
-            "scenario_total_s": float(res.get("timing", {}).get("scenario_total_s", 0.0)),
-            "ordering_strategy": str(res.get("ordering_strategy", cfg.get("ordering", {}).get("strategy", "region_constrained"))),
-        }
-        experiment_rows.append(row)
-        scenario_results[sname] = res
-        if sname == primary_name:
-            primary_result = res
-
-    if primary_result is None and experiment_rows:
-        fallback_name = str(experiment_rows[0]["scenario"])
-        log(f"Primary scenario '{primary_name}' not found in results; fallback to '{fallback_name}'")
-        scenario_cfg = deep_update(cfg, {"name": fallback_name})
-        primary_result = run_single_scenario(
-            cfg=scenario_cfg,
-            station=station,
-            phase1_report=phase1_report,
-            device_data=device_data,
-            region_sequence=region_sequence,
-            out_dir=out_dir,
-            scenario_name=fallback_name,
-            write_full_outputs=True,
-        )
-        scenario_results[fallback_name] = primary_result
-
-    save_experiment_csv(out_dir / "experiments" / "phase3_experiment_summary.csv", experiment_rows)
-    write_json(out_dir / "experiments" / "phase3_experiment_summary.json", {"rows": experiment_rows})
-    core_names = {"conservative", "balanced", "aggressive"}
-    rows_core = [r for r in experiment_rows if str(r.get("scenario", "")).lower() in core_names]
-    plot_experiment_compare(
-        out_dir / "experiments" / "phase3_experiment_compare.png",
-        rows_core if rows_core else experiment_rows,
-    )
-
-    baseline_res = scenario_results.get(primary_name)
-    phase2_style_res = scenario_results.get("phase2_style_local")
-    if baseline_res is not None and phase2_style_res is not None:
-        gcfg = cfg.get("global_cloud_visualization", {})
-        las_path = (root / gcfg.get("station_baseline_las", "pointclouds/substation_baseline.las")).resolve()
-        cloud_xyz, cloud_rgb = sample_las_rgb_cloud(
-            las_path=las_path,
-            max_points=int(gcfg.get("max_points", 120000)),
-            chunk_size=int(gcfg.get("chunk_size", 1000000)),
-            seed=int(cfg.get("random_seed", 42)) + 707,
-            angle_rad=float(phase1_report.get("rotation", {}).get("angle_rad", 0.0)),
-        )
-        path_left = np.asarray(baseline_res.get("_viz_path_smooth", np.empty((0, 3), dtype=np.float64)), dtype=np.float64)
-        path_right = np.asarray(phase2_style_res.get("_viz_path_smooth", np.empty((0, 3), dtype=np.float64)), dtype=np.float64)
-        start_pt = np.asarray(baseline_res.get("_viz_start_xyz", cfg["mission"]["start_home_xyz"]), dtype=np.float64)
-        visualize_station_rgb_path_comparison(
-            out_png=out_dir / "experiments" / "station_mission_rgb_path_compare_phase2_style.png",
-            out_gif=out_dir / "experiments" / "station_mission_rgb_path_compare_phase2_style_rotate.gif",
-            cloud_xyz=cloud_xyz,
-            cloud_rgb=cloud_rgb,
-            path_left=path_left,
-            path_right=path_right,
-            start_pt=start_pt,
-            vis_cfg=gcfg,
-            left_title=f"Station RGB + Path ({primary_name})",
-            right_title="Station RGB + Path (phase2_style_local)",
-        )
-
-    phase1_safety_exp = run_phase1_safety_sweep_experiment(
+    primary_name = str(cfg["mission"].get("primary_scenario", "balanced"))
+    log(f"Scenario: {primary_name}")
+    primary_result = run_single_scenario(
         cfg=cfg,
+        station=station,
         phase1_report=phase1_report,
         device_data=device_data,
         region_sequence=region_sequence,
         out_dir=out_dir,
+        scenario_name=primary_name,
+        write_full_outputs=True,
     )
+    experiment_rows: List[dict] = []
 
     summary = build_output_summary(
         cfg=cfg,
         phase1_report=phase1_report,
         primary_result=primary_result,
         experiment_rows=experiment_rows,
-        phase1_safety_experiment=phase1_safety_exp,
+        phase1_safety_experiment={"enabled": False},
     )
     summary["runtime_s"] = float(time.perf_counter() - t0)
     write_json(out_dir / "phase3_station_mission_summary.json", summary)
