@@ -4,7 +4,7 @@
                   "project_root":  ".",
                   "pointcloud_dir":  "pointclouds",
                   "baseline_name":  "substation_baseline.las",
-                  "origin_name":  "substation_origin.las",
+                  "origin_name":  "substation_baseline.las",
                   "station_grid_npz":  "outputs/phase1_feasible_space/sweep_maps/station_grid_map_static_static_3_80.npz",
                   "phase1_report_json":  "outputs/phase1_feasible_space/feasible_space_report.json",
                   "output_dir":  "outputs/phase2_single_device/experiments/main_transformer_phase1_sweep/static_3_80"

@@ -3,7 +3,7 @@
   "paths": {
     "project_root": ".",
     "baseline_las": "pointclouds/substation_baseline.las",
-    "origin_las": "pointclouds/substation_origin.las",
+    "origin_las": "pointclouds/substation_baseline.las",
     "device_search_dirs": ["pointclouds", "."],
     "device_recursive": false,
     "output_dir": "outputs_smoke/phase1_feasible_space"

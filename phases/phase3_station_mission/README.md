@@ -3,6 +3,11 @@
 ## Purpose
 Phase 3 assembles Phase 2 per-device results into a station-level mission path, including ordering, global path planning, and post-processing.
 
+## Dependencies
+```powershell
+python -m pip install -r phases/phase3_station_mission/requirements.phase3.txt
+```
+
 ## Input
 - Phase 1:
   - `outputs/phase1_feasible_space/station_grid_map.npz`
@@ -11,6 +16,8 @@ Phase 3 assembles Phase 2 per-device results into a station-level mission path, 
   - `outputs/phase2_single_device/<device>/viewpoints_capture_ordered.csv`
   - `outputs/phase2_single_device/<device>/viewpoints_nav_ordered.csv`
   - `outputs/phase2_single_device/<device>/device_report.json`
+
+If any required LAS file is missing, the program exits immediately.
 
 ## Run
 ```powershell

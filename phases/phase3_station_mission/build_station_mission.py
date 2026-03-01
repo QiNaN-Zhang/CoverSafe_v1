@@ -31,6 +31,24 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import numpy as np
 
 
+REQUIRED_POINTCLOUD_FILES: Tuple[str, ...] = (
+    "building1.las",
+    "building2.las",
+    "building3.las",
+    "capacitor.las",
+    "main_transformer.las",
+    "shelf1.las",
+    "shelf2.las",
+    "shelf3.las",
+    "shelf4.las",
+    "substation_baseline.las",
+    "tube1.las",
+    "tube2.las",
+    "wires1.las",
+    "wires2.las",
+)
+
+
 def log(msg: str) -> None:
     ts = time.strftime("%H:%M:%S")
     print(f"[{ts}] {msg}", flush=True)
@@ -38,6 +56,15 @@ def log(msg: str) -> None:
 
 def ensure_dir(path: Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
+
+
+def validate_required_pointclouds(root: Path, pointcloud_dir: str = "pointclouds") -> None:
+    base = (root / pointcloud_dir).resolve()
+    missing = [name for name in REQUIRED_POINTCLOUD_FILES if not (base / name).exists()]
+    if missing:
+        print("Missing required point cloud models. Please check.", flush=True)
+        print(f"Missing LAS files: {', '.join(missing)}", flush=True)
+        raise SystemExit(1)
 
 
 def load_json(path: Path) -> dict:
@@ -2984,6 +3011,7 @@ def main() -> None:
     t0 = time.perf_counter()
     cfg = load_json(args.config)
     root = Path(cfg["paths"]["project_root"]).resolve()
+    validate_required_pointclouds(root=root, pointcloud_dir="pointclouds")
     phase2_out = (root / cfg["paths"]["phase2_output_dir"]).resolve()
     phase1_grid = (root / cfg["paths"]["phase1_station_grid_npz"]).resolve()
     phase1_report_path = (root / cfg["paths"]["phase1_report_json"]).resolve()

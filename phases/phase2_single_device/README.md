@@ -3,11 +3,18 @@
 ## Purpose
 Phase 2 generates inspection viewpoints for each target device, reorders viewpoints, evaluates coverage, and builds optional local paths.
 
+## Dependencies
+```powershell
+python -m pip install -r phases/phase2_single_device/requirements.phase2.txt
+```
+
 ## Input
 - Device LAS files: `pointclouds/*.las`
 - Phase 1 outputs:
   - `outputs/phase1_feasible_space/station_grid_map.npz`
   - `outputs/phase1_feasible_space/feasible_space_report.json`
+
+If any required LAS file is missing, the program exits immediately.
 
 ## Run
 ```powershell

@@ -3,11 +3,16 @@
 ## Purpose
 Phase 1 builds a station-level 3D voxel map with blocked/free space under safety constraints.
 
+## Dependencies
+```powershell
+python -m pip install -r phases/phase1_feasible_space/requirements.phase1.txt
+```
+
 ## Input
 - LAS files in `pointclouds/` (segmented device clouds).
 - Optional baseline/origin LAS names from config.
 
-If baseline/origin LAS are missing, the script can synthesize a baseline LAS from available segmented LAS files.
+If any required LAS file is missing, the program exits immediately.
 
 ## Run
 ```powershell

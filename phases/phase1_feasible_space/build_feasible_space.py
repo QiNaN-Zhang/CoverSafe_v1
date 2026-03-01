@@ -37,6 +37,24 @@ class DeviceCloud:
     voxels_abs: Set[Voxel]
 
 
+REQUIRED_POINTCLOUD_FILES: Tuple[str, ...] = (
+    "building1.las",
+    "building2.las",
+    "building3.las",
+    "capacitor.las",
+    "main_transformer.las",
+    "shelf1.las",
+    "shelf2.las",
+    "shelf3.las",
+    "shelf4.las",
+    "substation_baseline.las",
+    "tube1.las",
+    "tube2.las",
+    "wires1.las",
+    "wires2.las",
+)
+
+
 def log_progress(msg: str) -> None:
     ts = time.strftime("%H:%M:%S")
     print(f"[{ts}] {msg}", flush=True)
@@ -63,6 +81,15 @@ def should_log_chunk(chunk_idx: int, total_chunks: int, every_n: int) -> bool:
 def load_config(config_path: Path) -> dict:
     with config_path.open("r", encoding="utf-8-sig") as f:
         return json.load(f)
+
+
+def validate_required_pointclouds(root: Path, pointcloud_dir: str = "pointclouds") -> None:
+    base = (root / pointcloud_dir).resolve()
+    missing = [name for name in REQUIRED_POINTCLOUD_FILES if not (base / name).exists()]
+    if missing:
+        print("Missing required point cloud models. Please check.", flush=True)
+        print(f"Missing LAS files: {', '.join(missing)}", flush=True)
+        raise SystemExit(1)
 
 
 def resolve_input_path(root: Path, configured_path: str, fallback_dirs: Optional[List[str]] = None) -> Path:
@@ -132,66 +159,6 @@ def discover_device_files(
             continue
         uniq[str(p)] = p
     return sorted(uniq.values())
-
-
-def synthesize_baseline_from_segmented_las(
-    root: Path,
-    configured_baseline_path: str,
-    baseline_name: str,
-    origin_name: str,
-    search_dirs: Optional[List[str]],
-    recursive: bool,
-    chunk_size: int,
-) -> Path:
-    device_files = discover_device_files(
-        root=root,
-        baseline_name=baseline_name,
-        origin_name=origin_name,
-        search_dirs=search_dirs,
-        recursive=recursive,
-    )
-    if not device_files:
-        raise FileNotFoundError(
-            "Cannot synthesize baseline LAS because no segmented LAS files were found."
-        )
-
-    configured = Path(configured_baseline_path)
-    target_name = configured.name or "substation_baseline.las"
-    if configured.is_absolute():
-        target_path = configured
-    else:
-        target_path = (root / "pointclouds" / target_name).resolve()
-    target_path.parent.mkdir(parents=True, exist_ok=True)
-
-    if target_path.exists():
-        return target_path
-
-    first_path = device_files[0]
-    with laspy.open(first_path) as first_reader:
-        header = laspy.LasHeader(
-            point_format=first_reader.header.point_format,
-            version=first_reader.header.version,
-        )
-        header.scales = np.asarray(first_reader.header.scales)
-        header.offsets = np.asarray(first_reader.header.offsets)
-
-    log_progress(
-        f"Baseline LAS not found. Synthesizing '{target_path.name}' from {len(device_files)} segmented LAS files."
-    )
-    with laspy.open(target_path, mode="w", header=header) as writer:
-        for idx, src in enumerate(device_files, start=1):
-            with laspy.open(src) as reader:
-                if int(reader.header.point_format.id) != int(header.point_format.id):
-                    raise RuntimeError(
-                        "Incompatible LAS point formats while synthesizing baseline: "
-                        f"{src.name} has format {reader.header.point_format.id}, "
-                        f"expected {header.point_format.id}."
-                    )
-                for points in reader.chunk_iterator(chunk_size):
-                    writer.write_points(points)
-            log_progress(f"Synth baseline progress: {idx}/{len(device_files)} files merged")
-
-    return target_path
 
 
 def random_sample_points_from_las(
@@ -1416,33 +1383,17 @@ def main() -> None:
     device_recursive = bool(cfg.get("paths", {}).get("device_recursive", False))
 
     root = Path(cfg["paths"]["project_root"]).resolve()
-    baseline_cfg_path = str(cfg["paths"]["baseline_las"])
-    origin_cfg_path = str(cfg["paths"].get("origin_las", "substation_origin.las"))
-    try:
-        baseline_path = resolve_input_path(
-            root=root,
-            configured_path=baseline_cfg_path,
-            fallback_dirs=["pointclouds", "."],
-        )
-    except FileNotFoundError:
-        baseline_path = synthesize_baseline_from_segmented_las(
-            root=root,
-            configured_baseline_path=baseline_cfg_path,
-            baseline_name=Path(baseline_cfg_path).name,
-            origin_name=Path(origin_cfg_path).name,
-            search_dirs=device_search_dirs,
-            recursive=device_recursive,
-            chunk_size=chunk_size,
-        )
-    try:
-        origin_path = resolve_input_path(
-            root=root,
-            configured_path=origin_cfg_path,
-            fallback_dirs=["pointclouds", "."],
-        )
-    except FileNotFoundError:
-        origin_path = baseline_path
-        log_progress("Origin LAS not found. Using baseline LAS path as origin placeholder.")
+    validate_required_pointclouds(root=root, pointcloud_dir="pointclouds")
+    baseline_path = resolve_input_path(
+        root=root,
+        configured_path=str(cfg["paths"]["baseline_las"]),
+        fallback_dirs=["pointclouds", "."],
+    )
+    origin_path = resolve_input_path(
+        root=root,
+        configured_path=str(cfg["paths"].get("origin_las", cfg["paths"]["baseline_las"])),
+        fallback_dirs=["pointclouds", "."],
+    )
 
     out_dir = root / cfg["paths"].get("output_dir", "outputs")
     out_dir.mkdir(parents=True, exist_ok=True)

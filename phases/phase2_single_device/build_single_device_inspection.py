@@ -30,6 +30,23 @@ import numpy as np
 
 Voxel = Tuple[int, int, int]
 
+REQUIRED_POINTCLOUD_FILES: Tuple[str, ...] = (
+    "building1.las",
+    "building2.las",
+    "building3.las",
+    "capacitor.las",
+    "main_transformer.las",
+    "shelf1.las",
+    "shelf2.las",
+    "shelf3.las",
+    "shelf4.las",
+    "substation_baseline.las",
+    "tube1.las",
+    "tube2.las",
+    "wires1.las",
+    "wires2.las",
+)
+
 
 def log(msg: str) -> None:
     ts = time.strftime("%H:%M:%S")
@@ -43,6 +60,15 @@ def load_json(path: Path) -> dict:
 
 def ensure_dir(p: Path) -> None:
     p.mkdir(parents=True, exist_ok=True)
+
+
+def validate_required_pointclouds(root: Path, pointcloud_dir: str) -> None:
+    base = (root / pointcloud_dir).resolve()
+    missing = [name for name in REQUIRED_POINTCLOUD_FILES if not (base / name).exists()]
+    if missing:
+        print("Missing required point cloud models. Please check.", flush=True)
+        print(f"Missing LAS files: {', '.join(missing)}", flush=True)
+        raise SystemExit(1)
 
 
 def infer_device_type(file_stem: str, type_keywords: Dict[str, List[str]]) -> str:
@@ -1545,6 +1571,7 @@ def main() -> None:
 
     cfg = load_json(args.config)
     root = Path(cfg["paths"]["project_root"]).resolve()
+    validate_required_pointclouds(root=root, pointcloud_dir=str(cfg["paths"]["pointcloud_dir"]))
     out_dir = (root / cfg["paths"]["output_dir"]).resolve()
     ensure_dir(out_dir)
 
