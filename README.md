@@ -105,5 +105,14 @@ python phases/phase3_station_mission/run_phase3.py --config phases/phase3_statio
 |   |-- phase2_single_device/
 |   |-- phase3_station_mission/
 |   `-- phase4_sim2real/
+|-- media/
+|   |-- figures/
+|   |   |-- Benchmark Comparisons/
+|   |   |-- Phase 1/
+|   |   |-- Phase 2/
+|   |   `-- Phase 3/
+|   `-- videos/
+|       |-- Full Version.mp4
+|       `-- Quick View.mp4
 `-- outputs/  (generated locally, not tracked)
 ```
