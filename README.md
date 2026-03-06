@@ -51,6 +51,12 @@ and stop.
 
 We will provide additional data access options (for example, Hugging Face) in the future.
 
+### Media Preview (Optional)
+
+You can also preview project media (videos and figures) on Google Drive:
+
+`https://drive.google.com/drive/folders/1b3w7NTdbQ7eYguw6AokSKbV6H5sfKuBF?usp=drive_link`
+
 ### 3) Run the full pipeline
 
 From repository root:
