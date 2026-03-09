@@ -31,9 +31,9 @@ python -m pip install -r phases/phase3_station_mission/requirements.phase3.txt
 
 ### 2) Download point clouds
 
-Point cloud data is provided via Google Drive:
+Point cloud data is temporarily provided via Google Drive (we created an anonymous account for sharing resources only):
 
-`https://drive.google.com/drive/folders/1R0N_E9OJJkdzURY1gaMfgWTxnTRZ_vMq?usp=drive_link`
+https://drive.google.com/drive/folders/1m9sKGXexrQo6qLAltnsoTdgbLA5rwk4Q?usp=sharing
 
 Steps:
 
@@ -50,12 +50,6 @@ If any required LAS file is missing, Phase 1/2/3 will print:
 and stop.
 
 We will provide additional data access options (for example, Hugging Face) in the future.
-
-### Media Preview (Optional)
-
-You can also preview project media (videos and figures) on Google Drive:
-
-`https://drive.google.com/drive/folders/1b3w7NTdbQ7eYguw6AokSKbV6H5sfKuBF?usp=drive_link`
 
 ### 3) Run the full pipeline
 
@@ -74,6 +68,12 @@ Default outputs:
 - Phase 3: `outputs/phase3_station_mission`
 
 Phase 4 (Sim2Real) is currently a placeholder and marked as `Coming Soon`.
+
+## Media Preview (Optional)
+
+You can also access project media (videos and figures) on Google Drive if anonymous Github fails to process large files:
+
+https://drive.google.com/drive/folders/1nej0yTzRJMJL2XpDqVAHr4IuMMkllv2b?usp=sharing
 
 ## Run Phases Independently
 
